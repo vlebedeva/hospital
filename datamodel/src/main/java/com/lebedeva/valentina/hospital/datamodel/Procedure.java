@@ -1,7 +1,7 @@
 package com.lebedeva.valentina.hospital.datamodel;
 
 public class Procedure {
-	
+
 	private Integer id;
 	private String name;
 	private Integer diagnosisId;

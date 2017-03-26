@@ -14,39 +14,49 @@ public class AssignedOperation {
 	public Integer getId() {
 		return id;
 	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 	public Integer getMedicalCardId() {
 		return medicalCardId;
 	}
+
 	public void setMedicalCardId(Integer medicalCardId) {
 		this.medicalCardId = medicalCardId;
 	}
+
 	public Integer getOperationId() {
 		return operationId;
 	}
+
 	public void setOperationId(Integer operationId) {
 		this.operationId = operationId;
 	}
+
 	public Date getAssigned() {
 		return assigned;
 	}
+
 	public void setAssigned(Date assigned) {
 		this.assigned = assigned;
 	}
+
 	public String getExecutor() {
 		return executor;
 	}
+
 	public void setExecutor(String executor) {
 		this.executor = executor;
 	}
+
 	public Date getDone() {
 		return done;
 	}
+
 	public void setDone(Date done) {
 		this.done = done;
 	}
-	
-	
+
 }
