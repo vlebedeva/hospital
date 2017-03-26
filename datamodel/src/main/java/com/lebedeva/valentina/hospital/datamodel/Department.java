@@ -1,6 +1,6 @@
 package com.lebedeva.valentina.hospital.datamodel;
 
-public class Departament {
+public class Department {
 
 	private Integer id ;
 	private String  name;
