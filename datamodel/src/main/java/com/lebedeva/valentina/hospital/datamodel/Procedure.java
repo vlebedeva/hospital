@@ -29,4 +29,9 @@ public class Procedure {
 	public void setDiagnosisId(Integer diagnosisId) {
 		this.diagnosisId = diagnosisId;
 	}
+	
+	@Override
+	public String toString() {
+		return "Procedure [id=" + id + ", name=" + name + ", diagnosisId=" + diagnosisId + "]";
+	}
 }

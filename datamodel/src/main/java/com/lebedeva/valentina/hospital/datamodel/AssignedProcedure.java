@@ -58,5 +58,10 @@ public class AssignedProcedure {
 	public void setDone(Date done) {
 		this.done = done;
 	}
+	@Override
+	public String toString() {
+		return "AssignedMedicament [id=" + id + ", medicalCardId=" + medicalCardId + ", procedureId=" + procedureId
+				+ ", assigned = " + assigned + ", executor=" + executor + ", done=" + done + "]";
+	}
 
 }

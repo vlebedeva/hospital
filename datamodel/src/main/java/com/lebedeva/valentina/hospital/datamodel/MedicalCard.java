@@ -103,5 +103,13 @@ public class MedicalCard {
 	public void setDischargeDate(Date dischargeDate) {
 		this.dischargeDate = dischargeDate;
 	}
+	
+	@Override
+	public String toString() {
+		return "MedicalCard [id=" + id + ", patientFullName=" + patientFullName + ", birthday=" + birthday
+				+ ", adress = " + adress + ", document=" + document + ", phoneNumber=" + phoneNumber 
+				+  ", diagnosisId = " + diagnosisId + ", medicalWorkerId=" + medicalWorkerId + ", departmentId=" + departmentId
+				+  ", enterDate = " + enterDate + ", dischargeDate=" + dischargeDate +"]";
+	}
 
 }

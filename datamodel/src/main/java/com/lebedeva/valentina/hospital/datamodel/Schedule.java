@@ -41,4 +41,9 @@ public class Schedule {
 		this.end = end;
 	}
 
+	@Override
+	public String toString() {
+		return "Schedule [id=" + id + ", medicalWorkerId=" + medicalWorkerId + ", star=" + star + ", end=" + end + "]";
+	}
+
 }

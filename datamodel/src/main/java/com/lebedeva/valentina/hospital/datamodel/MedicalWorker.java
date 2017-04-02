@@ -1,12 +1,19 @@
 package com.lebedeva.valentina.hospital.datamodel;
 
+enum Position {
+	DOCTOR, NURSE
+}
+
 public class MedicalWorker {
 
 	private Integer id;
 	private String fullName;
+	private Position position;
 	private String specialization;
 	private String category;
 	private Integer departmentId;
+	private Boolean active;
+	private String email;
 
 	public Integer getId() {
 		return id;
@@ -22,6 +29,14 @@ public class MedicalWorker {
 
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
+	}
+
+	public Position getPosition() {
+		return position;
+	}
+
+	public void setPosition(Position position) {
+		this.position = position;
 	}
 
 	public String getSpecialization() {
@@ -46,6 +61,30 @@ public class MedicalWorker {
 
 	public void setDepartmentId(Integer departmentId) {
 		this.departmentId = departmentId;
+	}
+
+	public Boolean getActive() {
+		return active;
+	}
+
+	public void setActive(Boolean active) {
+		this.active = active;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	@Override
+	public String toString() {
+
+		return "MedicalWorker [id=" + id + ", fullName=" + fullName + ", position=" + position + ", specialization="
+				+ specialization + ", category = " + category + ", departmentId=" + departmentId + ", email = " + email
+				+ ", active = " + active + "]";
 	}
 
 }

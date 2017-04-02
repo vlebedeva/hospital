@@ -20,5 +20,8 @@ public class Diagnosis {
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	@Override
+	public String toString() {
+		return "Diagnosis [id=" + id + ", name=" + name + "]";
+	}
 }

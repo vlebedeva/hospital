@@ -59,4 +59,10 @@ public class AssignedMedicament {
 		this.done = done;
 	}
 
+	@Override
+	public String toString() {
+		return "AssignedMedicament [id=" + id + ", medicalCardId=" + medicalCardId + ", medicamentId=" + medicamentId
+				+ ", assigned = " + assigned + ", executor=" + executor + ", done=" + done + "]";
+	}
+
 }

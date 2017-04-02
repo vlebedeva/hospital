@@ -29,4 +29,8 @@ public class Medicament {
 		this.diagnosisId = diagnosisId;
 	}
 
+	@Override
+	public String toString() {
+		return "Medicament [id=" + id + ", name=" + name + ", diagnosisId=" + diagnosisId + "]";
+	}
 }
