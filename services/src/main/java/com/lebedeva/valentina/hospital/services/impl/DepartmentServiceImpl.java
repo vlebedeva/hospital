@@ -50,9 +50,9 @@ public class DepartmentServiceImpl implements IDepartmentService {
 	}
 
 	@Override
-	public void saveMultiple(Department... departmentAray) {
+	public void saveMultiple(Department... departmentArray) {
 
-		for (Department department : departmentAray) {
+		for (Department department : departmentArray) {
 			save(department);
 		}
 

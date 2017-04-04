@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.lebedeva.valentina.hospital.datamodel.Department;
 import com.lebedeva.valentina.hospital.services.IDepartmentService;
 
-public class ServicesTest {
+public class ServicesTestDepartment {
 	public static void main(String[] args) {
 
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("web-context.xml");
