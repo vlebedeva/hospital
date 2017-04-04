@@ -3,13 +3,13 @@ package com.lebedeva.valentina.hospital.webapp;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.lebedeva.valentina.hospital.datamodel.Department;
-import com.lebedeva.valentina.hospital.services.IDepartmentServices;
+import com.lebedeva.valentina.hospital.services.IDepartmentService;
 
 public class TransactionsTest {
 	public static void main(String[] args) {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("web-context.xml");
 
-		IDepartmentServices service = context.getBean(IDepartmentServices.class);
+		IDepartmentService service = context.getBean(IDepartmentService.class);
 
 		Department department1 = new Department();
 		department1.setName("new department in transaction 1");

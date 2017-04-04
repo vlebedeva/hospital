@@ -29,11 +29,9 @@ public class Operation {
 	public void setDiagnosisId(Integer diagnosisId) {
 		this.diagnosisId = diagnosisId;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Operation [id=" + id + ", name=" + name + ", diagnosisId=" + diagnosisId + "]";
+		return String.format("Operation [id = %s name = %s diagnosisId = %s]", id, name, diagnosisId);
 	}
 }
-
-

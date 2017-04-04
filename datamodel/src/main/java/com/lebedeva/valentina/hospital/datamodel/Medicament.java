@@ -31,6 +31,6 @@ public class Medicament {
 
 	@Override
 	public String toString() {
-		return "Medicament [id=" + id + ", name=" + name + ", diagnosisId=" + diagnosisId + "]";
+		return String.format("Medicament [id = %s name = %s diagnosisId = %s]", id, name, diagnosisId);
 	}
 }

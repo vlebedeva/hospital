@@ -15,6 +15,7 @@ public class DbConnectionTest {
 
             Statement createStatement = con.createStatement();
             createStatement.execute("select * from department order by id");
+            
 
            
         } catch (ClassNotFoundException e) {

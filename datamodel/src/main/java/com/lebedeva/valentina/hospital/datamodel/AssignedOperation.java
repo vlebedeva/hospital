@@ -60,8 +60,10 @@ public class AssignedOperation {
 	}
 	@Override
 	public String toString() {
-		return "AssignedMedicament [id=" + id + ", medicalCardId=" + medicalCardId + ", operationId=" + operationId
-				+ ", assigned = " + assigned + ", executor=" + executor + ", done=" + done + "]";
+		return String.format(
+				"AssignedOperation [id = %s medicalCardId = %s operationId = %s assigned = %s executor = %s done = %s]",
+				id, medicalCardId, operationId, assigned, executor, done);
+				
 	}
 
 }

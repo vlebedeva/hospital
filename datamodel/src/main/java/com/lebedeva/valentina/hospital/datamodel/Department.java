@@ -23,6 +23,6 @@ public class Department {
 
 	@Override
 	public String toString() {
-		return "Department [id=" + id + ", name=" + name + "]";
+		return String.format("Department [id = %s name = %s]", id, name);
 	}
 }

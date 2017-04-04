@@ -6,7 +6,7 @@ public class Schedule {
 
 	private Integer id;
 	private Integer medicalWorkerId;
-	private Date star;
+	private Date start;
 	private Date end;
 
 	public Integer getId() {
@@ -25,12 +25,12 @@ public class Schedule {
 		this.medicalWorkerId = medicalWorkerId;
 	}
 
-	public Date getStar() {
-		return star;
+	public Date getStart() {
+		return start;
 	}
 
-	public void setStar(Date star) {
-		this.star = star;
+	public void setStart(Date start) {
+		this.start = start;
 	}
 
 	public Date getEnd() {
@@ -43,7 +43,8 @@ public class Schedule {
 
 	@Override
 	public String toString() {
-		return "Schedule [id=" + id + ", medicalWorkerId=" + medicalWorkerId + ", star=" + star + ", end=" + end + "]";
+		return String.format("Schedule [id = %s medicalWorkerId = %s start = %s end = %s]", id, medicalWorkerId, start,
+				end);
 	}
 
 }

@@ -22,6 +22,6 @@ public class Diagnosis {
 	}
 	@Override
 	public String toString() {
-		return "Diagnosis [id=" + id + ", name=" + name + "]";
+		return  String.format("Diagnosis [id = %s name = %s]", id, name);
 	}
 }

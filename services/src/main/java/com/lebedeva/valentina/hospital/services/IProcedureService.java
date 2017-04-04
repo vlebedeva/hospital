@@ -1,5 +1,5 @@
 package com.lebedeva.valentina.hospital.services;
 
-public interface IMedicalCardServices {
+public interface IProcedureService {
 
 }

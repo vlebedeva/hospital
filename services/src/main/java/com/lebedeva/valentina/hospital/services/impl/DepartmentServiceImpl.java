@@ -4,15 +4,20 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+
 
 import com.lebedeva.valentina.hospital.dao.impl.db.IDepartmentDao;
 import com.lebedeva.valentina.hospital.datamodel.Department;
-import com.lebedeva.valentina.hospital.services.IDepartmentServices;
+import com.lebedeva.valentina.hospital.services.IDepartmentService;
 
 @Service
-public class DepartmentServicesImpl implements IDepartmentServices {
+public class DepartmentServiceImpl implements IDepartmentService {
 
+	private static final Logger LOGGER = LoggerFactory.getLogger(DepartmentServiceImpl.class);
+	
 	@Inject
 	private IDepartmentDao departmentDao;
 
@@ -32,6 +37,8 @@ public class DepartmentServicesImpl implements IDepartmentServices {
 			System.out.println("Insert new Department");
 			departmentDao.insert(department);
 		} else {
+			
+			System.out.println("Update Department");
 			departmentDao.update(department);
 		}
 	}

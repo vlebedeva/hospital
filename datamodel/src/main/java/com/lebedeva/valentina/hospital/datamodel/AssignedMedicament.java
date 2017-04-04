@@ -61,8 +61,11 @@ public class AssignedMedicament {
 
 	@Override
 	public String toString() {
-		return "AssignedMedicament [id=" + id + ", medicalCardId=" + medicalCardId + ", medicamentId=" + medicamentId
-				+ ", assigned = " + assigned + ", executor=" + executor + ", done=" + done + "]";
+
+		return String.format(
+				"AssignedMedicament [id = %s medicalCardId = %s medicamentId = %s assigned = %s executor = %s done = %s]",
+				id, medicalCardId, medicamentId, assigned, executor, done);
+
 	}
 
 }

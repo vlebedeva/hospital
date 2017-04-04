@@ -18,9 +18,11 @@ import org.springframework.stereotype.Repository;
 import com.lebedeva.valentina.hospital.dao.impl.db.IDepartmentDao;
 import com.lebedeva.valentina.hospital.datamodel.Department;
 
+
 @Repository
 public class DepartmentDaoImpl implements IDepartmentDao {
-
+	
+	
 	@Inject
 	private JdbcTemplate jdbcTemplate;
 
@@ -35,7 +37,7 @@ public class DepartmentDaoImpl implements IDepartmentDao {
 	}
 
 	@Override
-	public Department insert(Department entity) {
+	public Department insert(Department department) {
 
 		final String INSERT_SQL = "insert into department (name) values(?)";
 
@@ -45,14 +47,14 @@ public class DepartmentDaoImpl implements IDepartmentDao {
 			@Override
 			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
 				PreparedStatement ps = connection.prepareStatement(INSERT_SQL, new String[] { "id" });
-				ps.setString(1, entity.getName());
+				ps.setString(1, department.getName());
 				return ps;
 			}
 		}, keyHolder);
 
 		Number key = keyHolder.getKey();
-		entity.setId(key.intValue());
-		return entity;
+		department.setId(key.intValue());
+		return department;
 
 	}
 
@@ -67,10 +69,24 @@ public class DepartmentDaoImpl implements IDepartmentDao {
 				new BeanPropertyRowMapper<Department>(Department.class));
 		return rs;
 	}
-
+	
+	
 	@Override
-	public void update(Department department) {
-		jdbcTemplate.update("update department set name (name) where id=(?)");
-	}
-
+    public void update(Department department) {
+		final String UPDATE_SQL = "update department set name =? where id = ?";
+		
+        jdbcTemplate.update(new PreparedStatementCreator() {
+            @Override
+            public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
+                PreparedStatement ps = connection.prepareStatement(UPDATE_SQL);
+                ps.setString(1, department.getName());
+                ps.setInt(2, department.getId());
+ 
+                return ps;
+            }
+        });
+    }
+ 
 }
+
+

@@ -81,10 +81,9 @@ public class MedicalWorker {
 
 	@Override
 	public String toString() {
-
-		return "MedicalWorker [id=" + id + ", fullName=" + fullName + ", position=" + position + ", specialization="
-				+ specialization + ", category = " + category + ", departmentId=" + departmentId + ", email = " + email
-				+ ", active = " + active + "]";
+		return String.format(
+				"MedicalWorker [id = %s fullName = %s position = %s specialization = %s category = %s departmentId = %s email = %s active = %s]",
+				id, fullName, position, specialization, category, departmentId, email, active);
 	}
 
 }

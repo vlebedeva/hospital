@@ -1,5 +1,5 @@
 package com.lebedeva.valentina.hospital.services;
 
-public interface IOperationServices {
+public interface IAssignedMedicamentService {
 
 }
