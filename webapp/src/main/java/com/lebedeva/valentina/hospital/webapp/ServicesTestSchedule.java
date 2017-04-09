@@ -12,7 +12,7 @@ public class ServicesTestSchedule {
 
 		IScheduleService service = context.getBean(IScheduleService.class);
 
-		System.out.println(service.getById(1));
+		/*System.out.println(service.getById(1));
 		System.out.println(service.getAll());
 
 		Schedule schedule = new Schedule(); // new object type Department
@@ -21,7 +21,7 @@ public class ServicesTestSchedule {
 		service.getById(2);
 		System.out.println(service.getById(2));
 		schedule.setId(2);
-		schedule.setMedicalWorkerId(3);
+		schedule.setMedicalWorkerId(3);*/
 
 		// ---------------java.util.Date date = new java.util.Date();
 		// ---------------java.sql.Timestamp sqlTimestamp = new
@@ -29,7 +29,7 @@ public class ServicesTestSchedule {
 
 		java.util.Date date = new java.util.Date();
 		java.sql.Date stDate = new java.sql.Date(date.getTime());
-		java.sql.Time time = new java.sql.Time(date.getTime());
+		/*java.sql.Time time = new java.sql.Time(date.getTime());
 		schedule.setStartDate(stDate.valueOf("2017-05-01"));
 		schedule.setStartTime(time.valueOf("08:00:00"));
 		schedule.setStopDate(stDate);
@@ -42,10 +42,10 @@ public class ServicesTestSchedule {
 		System.out.println(service.getAll());
 
 		// for MedicalWorkerId
-		System.out.println(service.getByMedicalWorkerId(3));
+		System.out.println(service.getByMedicalWorkerId(3));*/
 
 		// for date
-		System.out.println(service.getByDate(stDate.valueOf("2017-05-01")));
+		System.out.println(service.getByDate(stDate.valueOf("2017-04-09")));
 
 	}
 
