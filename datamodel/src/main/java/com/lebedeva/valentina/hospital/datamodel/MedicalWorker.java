@@ -1,16 +1,12 @@
 package com.lebedeva.valentina.hospital.datamodel;
 
-enum Position {
-	DOCTOR, NURSE
-}
-
 public class MedicalWorker {
 
 	private Integer id;
 	private String fullName;
 	private Position position;
 	private String specialization;
-	private String category;
+	private Category category;
 	private Integer departmentId;
 	private Boolean active;
 	private String email;
@@ -47,11 +43,11 @@ public class MedicalWorker {
 		this.specialization = specialization;
 	}
 
-	public String getCategory() {
+	public Category getCategory() {
 		return category;
 	}
 
-	public void setCategory(String category) {
+	public void setCategory(Category category) {
 		this.category = category;
 	}
 

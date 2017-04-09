@@ -8,7 +8,7 @@ public class AssignedMedicament {
 	private Integer medicalCardId;
 	private Integer medicamentId;
 	private Date assigned;
-	private String executor;
+	private Position executor;
 	private Date done;
 
 	public Integer getId() {
@@ -43,11 +43,11 @@ public class AssignedMedicament {
 		this.assigned = assigned;
 	}
 
-	public String getExecutor() {
+	public Position getExecutor() {
 		return executor;
 	}
 
-	public void setExecutor(String executor) {
+	public void setExecutor(Position executor) {
 		this.executor = executor;
 	}
 

@@ -8,7 +8,7 @@ public class AssignedProcedure {
 	private Integer medicalCardId;
 	private Integer procedureId;
 	private Date assigned;
-	private String executor;
+	private Position executor;
 	private Date done;
 
 	public Integer getId() {
@@ -43,11 +43,11 @@ public class AssignedProcedure {
 		this.assigned = assigned;
 	}
 
-	public String getExecutor() {
+	public Position getExecutor() {
 		return executor;
 	}
 
-	public void setExecutor(String executor) {
+	public void setExecutor(Position executor) {
 		this.executor = executor;
 	}
 
@@ -58,6 +58,7 @@ public class AssignedProcedure {
 	public void setDone(Date done) {
 		this.done = done;
 	}
+
 	@Override
 	public String toString() {
 		return String.format(
