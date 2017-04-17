@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.lebedeva.valentina.hospital.dao.impl.db.IAssignedProcedureDao;
-import com.lebedeva.valentina.hospital.datamodel.AssignedMedicament;
 import com.lebedeva.valentina.hospital.datamodel.AssignedProcedure;
 import com.lebedeva.valentina.hospital.services.IAssignedProcedureService;
 
