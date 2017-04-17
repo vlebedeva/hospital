@@ -1,6 +1,7 @@
 package com.lebedeva.valentina.hospital.datamodel;
 
 import java.sql.Date;
+import java.sql.Time;
 
 public class AssignedProcedure {
 
@@ -8,8 +9,9 @@ public class AssignedProcedure {
 	private Integer medicalCardId;
 	private Integer procedureId;
 	private Date assigned;
-	private Position executor;
-	private Date done;
+	private Integer medicalWorkerId;
+	private Time done;
+	private String annotation;
 
 	public Integer getId() {
 		return id;
@@ -43,27 +45,35 @@ public class AssignedProcedure {
 		this.assigned = assigned;
 	}
 
-	public Position getExecutor() {
-		return executor;
+	public Integer getMedicalWorkerId() {
+		return medicalWorkerId;
 	}
 
-	public void setExecutor(Position executor) {
-		this.executor = executor;
+	public void setMedicalWorkerId(Integer medicalWorkerId) {
+		this.medicalWorkerId = medicalWorkerId;
 	}
 
-	public Date getDone() {
+	public Time getDone() {
 		return done;
 	}
 
-	public void setDone(Date done) {
+	public void setDone(Time done) {
 		this.done = done;
+	}
+
+	public String getAnnotation() {
+		return annotation;
+	}
+
+	public void setAnnotation(String annotation) {
+		this.annotation = annotation;
 	}
 
 	@Override
 	public String toString() {
 		return String.format(
-				"AssignedProcedure [id = %s medicalCardId = %s procedureId = %s assigned = %s executor = %s done = %s]",
-				id, medicalCardId, procedureId, assigned, executor, done);
+				"AssignedProcedure [id = %s medicalCardId = %s procedureId = %s assigned = %s medicalWorkerId = %s done = %s annotation=%s]",
+				id, medicalCardId, procedureId, assigned, medicalWorkerId, done, annotation);
 	}
 
 }
