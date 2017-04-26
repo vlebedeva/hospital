@@ -8,7 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.lebedeva.valentina.hospital.dao.impl.db.IDiagnosisDao;
+import com.lebedeva.valentina.hospital.dao.api.IDiagnosisDao;
 import com.lebedeva.valentina.hospital.datamodel.Diagnosis;
 import com.lebedeva.valentina.hospital.services.IDiagnosisService;
 

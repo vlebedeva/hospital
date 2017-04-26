@@ -9,8 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.lebedeva.valentina.hospital.dao.impl.db.IScheduleDao;
-
+import com.lebedeva.valentina.hospital.dao.api.IScheduleDao;
 import com.lebedeva.valentina.hospital.datamodel.Schedule;
 import com.lebedeva.valentina.hospital.services.IScheduleService;
 

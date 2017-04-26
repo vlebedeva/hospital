@@ -5,7 +5,8 @@ import javax.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import com.lebedeva.valentina.hospital.dao.impl.db.IMedicalWorkerDao;
+
+import com.lebedeva.valentina.hospital.dao.api.IMedicalWorkerDao;
 import com.lebedeva.valentina.hospital.datamodel.Category;
 import com.lebedeva.valentina.hospital.datamodel.MedicalWorker;
 import com.lebedeva.valentina.hospital.datamodel.Position;

@@ -8,8 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-
-import com.lebedeva.valentina.hospital.dao.impl.db.IDepartmentDao;
+import com.lebedeva.valentina.hospital.dao.api.IDepartmentDao;
 import com.lebedeva.valentina.hospital.datamodel.Department;
 import com.lebedeva.valentina.hospital.services.IDepartmentService;
 
