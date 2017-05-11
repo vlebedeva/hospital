@@ -16,13 +16,13 @@ import com.lebedeva.valentina.hospital.services.IDepartmentService;
 public class DepartmentServiceImpl implements IDepartmentService {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(DepartmentServiceImpl.class);
-	
+
 	@Inject
 	private IDepartmentDao departmentDao;
 
 	@Override
-	public Department get(Integer id) {
-		return departmentDao.get(id);
+	public Department getById(Integer id) {
+		return departmentDao.getById(id);
 	}
 
 	@Override
@@ -36,7 +36,7 @@ public class DepartmentServiceImpl implements IDepartmentService {
 			System.out.println("Insert new Department");
 			departmentDao.insert(department);
 		} else {
-			
+
 			System.out.println("Update Department");
 			departmentDao.update(department);
 		}
@@ -45,15 +45,6 @@ public class DepartmentServiceImpl implements IDepartmentService {
 	@Override
 	public void delete(Integer id) {
 		departmentDao.delete(id);
-
-	}
-
-	@Override
-	public void saveMultiple(Department... departmentArray) {
-
-		for (Department department : departmentArray) {
-			save(department);
-		}
 
 	}
 

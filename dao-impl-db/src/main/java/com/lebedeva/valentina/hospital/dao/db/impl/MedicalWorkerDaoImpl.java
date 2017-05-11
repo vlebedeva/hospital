@@ -16,7 +16,6 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import com.lebedeva.valentina.hospital.dao.api.IMedicalWorkerDao;
-import com.lebedeva.valentina.hospital.datamodel.Category;
 import com.lebedeva.valentina.hospital.datamodel.MedicalWorker;
 import com.lebedeva.valentina.hospital.datamodel.Position;
 
@@ -37,32 +36,11 @@ public class MedicalWorkerDaoImpl implements IMedicalWorkerDao {
 	}
 
 	@Override
-	public List<MedicalWorker> getByDepartmentId(Integer departmentId) {
-		try {
-			List<MedicalWorker> rs = jdbcTemplate.query("select * from medical_worker where department_id = ? ORDER BY id",
-					new Object[] { departmentId }, new BeanPropertyRowMapper<MedicalWorker>(MedicalWorker.class));
-			return rs;
-		} catch (EmptyResultDataAccessException e) {
-			return null;
-		}
-	}
-
-	@Override
-	public List<MedicalWorker> getByCategoty(Category category) {
-		try {
-			List<MedicalWorker> rs = jdbcTemplate.query("select * from medical_worker where category = ? ORDER BY id",
-					new Object[] { category.toString() }, new BeanPropertyRowMapper<MedicalWorker>(MedicalWorker.class));
-			return rs;
-		} catch (EmptyResultDataAccessException e) {
-			return null;
-		}
-	}
-
-	@Override
 	public List<MedicalWorker> getByPosition(Position position) {
 		try {
 			List<MedicalWorker> rs = jdbcTemplate.query("select * from medical_worker where position = ? ORDER BY id",
-					new Object[] { position.toString() }, new BeanPropertyRowMapper<MedicalWorker>(MedicalWorker.class));
+					new Object[] { position.toString() },
+					new BeanPropertyRowMapper<MedicalWorker>(MedicalWorker.class));
 			return rs;
 		} catch (EmptyResultDataAccessException e) {
 			return null;
@@ -70,25 +48,7 @@ public class MedicalWorkerDaoImpl implements IMedicalWorkerDao {
 	}
 
 	@Override
-	public List<MedicalWorker> getBySpecialization(String specialization) {
-		try {
-			List<MedicalWorker> rs = jdbcTemplate.query("select * from medical_worker where specialization = ? ORDER BY id",
-					new Object[] { specialization }, new BeanPropertyRowMapper<MedicalWorker>(MedicalWorker.class));
-			return rs;
-		} catch (EmptyResultDataAccessException e) {
-			return null;
-		}
-	}
-
-	@Override
-	public List<MedicalWorker> getAll() {
-		List<MedicalWorker> rs = jdbcTemplate.query("select * from medical_worker ORDER BY id",
-				new BeanPropertyRowMapper<MedicalWorker>(MedicalWorker.class));
-		return rs;
-	}
-
-	@Override
-	public List<MedicalWorker> getAllActive(Boolean active) {
+	public List<MedicalWorker> getByActive(Boolean active) {
 		try {
 			List<MedicalWorker> rs = jdbcTemplate.query("select * from medical_worker where active = ? ORDER BY id",
 					new Object[] { active }, new BeanPropertyRowMapper<MedicalWorker>(MedicalWorker.class));
@@ -101,7 +61,7 @@ public class MedicalWorkerDaoImpl implements IMedicalWorkerDao {
 	@Override
 	public MedicalWorker insert(MedicalWorker medicalWorker) {
 
-		final String INSERT_SQL = "insert into medical_worker ( full_name, position, specialization, category, department_id, active, email) values (?,?,?,?,?,?,?)";
+		final String INSERT_SQL = "insert into medical_worker ( full_name, position, specialization, category, department_id, active, login) values (?,?,?,?,?,?,?)";
 
 		KeyHolder keyHolder = new GeneratedKeyHolder();
 
@@ -115,7 +75,7 @@ public class MedicalWorkerDaoImpl implements IMedicalWorkerDao {
 				ps.setString(4, medicalWorker.getCategory().toString());
 				ps.setInt(5, medicalWorker.getDepartmentId());
 				ps.setBoolean(6, medicalWorker.getActive());
-				ps.setString(7, medicalWorker.getEmail());
+				ps.setString(7, medicalWorker.getLogin());
 				return ps;
 			}
 		}, keyHolder);
@@ -128,7 +88,7 @@ public class MedicalWorkerDaoImpl implements IMedicalWorkerDao {
 
 	@Override
 	public void update(MedicalWorker medicalWorker) {
-		final String UPDATE_SQL = "update medical_worker set full_name =?, position=?, specialization=?, category=?, department_id=?, active=?, email=? where id = ?";
+		final String UPDATE_SQL = "update medical_worker set full_name =?, position=?, specialization=?, category=?, department_id=?, active=?, login=? where id = ?";
 
 		jdbcTemplate.update(new PreparedStatementCreator() {
 			@Override
@@ -140,7 +100,7 @@ public class MedicalWorkerDaoImpl implements IMedicalWorkerDao {
 				ps.setString(4, medicalWorker.getCategory().toString());
 				ps.setInt(5, medicalWorker.getDepartmentId());
 				ps.setBoolean(6, medicalWorker.getActive());
-				ps.setString(7, medicalWorker.getEmail());
+				ps.setString(7, medicalWorker.getLogin());
 				ps.setInt(8, medicalWorker.getId());
 				return ps;
 			}

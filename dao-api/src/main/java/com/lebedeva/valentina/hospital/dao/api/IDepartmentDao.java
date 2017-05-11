@@ -6,7 +6,7 @@ import com.lebedeva.valentina.hospital.datamodel.Department;
 
 public interface IDepartmentDao {
 
-	Department get(Integer id);
+	Department getById(Integer id);
 	
 	List<Department> getAll();
 

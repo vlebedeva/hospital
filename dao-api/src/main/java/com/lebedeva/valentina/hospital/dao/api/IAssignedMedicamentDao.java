@@ -7,11 +7,7 @@ import com.lebedeva.valentina.hospital.datamodel.AssignedMedicament;
 public interface IAssignedMedicamentDao {
 	AssignedMedicament getById(Integer id);
 
-	List<AssignedMedicament> getByMedicalWorkerId(Integer medicalWorkerId);
-
 	List<AssignedMedicament> getByMedicalCardId(Integer medicalCardId);
-
-	List<AssignedMedicament> getAll();
 
 	AssignedMedicament insert(AssignedMedicament assignedMedicament);
 

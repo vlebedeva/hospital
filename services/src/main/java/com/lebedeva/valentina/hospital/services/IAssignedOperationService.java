@@ -9,15 +9,9 @@ import com.lebedeva.valentina.hospital.datamodel.AssignedOperation;
 public interface IAssignedOperationService {
 	AssignedOperation getById(Integer id);
 
-	List<AssignedOperation> getByMedicalWorkerId(Integer medicalWorkerId);
-
 	List<AssignedOperation> getByMedicalCardId(Integer medicalCardId);
-
-	List<AssignedOperation> getAll();
 
 	@Transactional
 	void save(AssignedOperation assignedOperation);
 
-	@Transactional
-	void saveMultiple(AssignedOperation... assignedOperation);
 }

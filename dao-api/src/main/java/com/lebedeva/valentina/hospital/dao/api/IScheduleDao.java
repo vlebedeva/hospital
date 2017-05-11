@@ -13,8 +13,6 @@ public interface IScheduleDao {
 
 	List<Schedule> getByDate(Date date);
 
-	List<Schedule> getAll();
-
 	Schedule insert(Schedule schedule);
 
 	void update(Schedule schedule);

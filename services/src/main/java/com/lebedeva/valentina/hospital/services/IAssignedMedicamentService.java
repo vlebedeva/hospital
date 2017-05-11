@@ -9,15 +9,9 @@ import com.lebedeva.valentina.hospital.datamodel.AssignedMedicament;
 public interface IAssignedMedicamentService {
 	AssignedMedicament getById(Integer id);
 
-	List<AssignedMedicament> getByMedicalWorkerId(Integer medicalWorkerId);
-
 	List<AssignedMedicament> getByMedicalCardId(Integer medicalCardId);
-
-	List<AssignedMedicament> getAll();
 
 	@Transactional
 	void save(AssignedMedicament assignedMedicament);
 
-	@Transactional
-	void saveMultiple(AssignedMedicament... assignedMedicament);
 }

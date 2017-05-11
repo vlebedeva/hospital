@@ -7,16 +7,13 @@ import org.springframework.transaction.annotation.Transactional;
 import com.lebedeva.valentina.hospital.datamodel.Department;
 
 public interface IDepartmentService {
-	Department get(Integer id);
+	Department getById(Integer id);
 
 	List<Department> getAll();
 
 	@Transactional
 	void save(Department department);
 	
-	@Transactional
-	void saveMultiple(Department... department);
-
 	@Transactional
 	void delete(Integer id);
 }

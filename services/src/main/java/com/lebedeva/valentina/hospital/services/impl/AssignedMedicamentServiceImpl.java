@@ -25,18 +25,8 @@ public class AssignedMedicamentServiceImpl implements IAssignedMedicamentService
 	}
 
 	@Override
-	public List<AssignedMedicament> getByMedicalWorkerId(Integer medicalWorkerId) {
-		return assignedMedicamentDao.getByMedicalWorkerId(medicalWorkerId);
-	}
-
-	@Override
 	public List<AssignedMedicament> getByMedicalCardId(Integer medicalCardId) {
 		return assignedMedicamentDao.getByMedicalCardId(medicalCardId);
-	}
-
-	@Override
-	public List<AssignedMedicament> getAll() {
-		return assignedMedicamentDao.getAll();
 	}
 
 	@Override
@@ -48,14 +38,6 @@ public class AssignedMedicamentServiceImpl implements IAssignedMedicamentService
 
 			System.out.println("Update AssignedMedicament");
 			assignedMedicamentDao.update(assignedMedicament);
-		}
-
-	}
-
-	@Override
-	public void saveMultiple(AssignedMedicament... assignedMedicamentArray) {
-		for (AssignedMedicament assignedMedicament : assignedMedicamentArray) {
-			save(assignedMedicament);
 		}
 
 	}

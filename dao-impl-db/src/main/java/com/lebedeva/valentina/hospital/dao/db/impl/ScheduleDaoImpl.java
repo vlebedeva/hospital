@@ -56,7 +56,8 @@ public class ScheduleDaoImpl implements IScheduleDao {
 	@Override
 	public List<Schedule> getByDate(Date date) {
 		try {
-			List<Schedule> rs = jdbcTemplate.query("select * from schedule where start_date = ? or stop_date = ? order by id",
+			List<Schedule> rs = jdbcTemplate.query(
+					"select * from schedule where start_date = ? or stop_date = ? order by id",
 					new Object[] { date, date }, new BeanPropertyRowMapper<Schedule>(Schedule.class));
 			return rs;
 		} catch (EmptyResultDataAccessException e) {
@@ -89,13 +90,6 @@ public class ScheduleDaoImpl implements IScheduleDao {
 		schedule.setId(key.intValue());
 		return schedule;
 
-	}
-
-	@Override
-	public List<Schedule> getAll() {
-		List<Schedule> rs = jdbcTemplate.query("select * from schedule ",
-				new BeanPropertyRowMapper<Schedule>(Schedule.class));
-		return rs;
 	}
 
 	@Override

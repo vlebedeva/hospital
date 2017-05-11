@@ -26,18 +26,8 @@ public class AssignedOperationServiceImpl implements IAssignedOperationService {
 	}
 
 	@Override
-	public List<AssignedOperation> getByMedicalWorkerId(Integer medicalWorkerId) {
-		return assignedOperationDao.getByMedicalWorkerId(medicalWorkerId);
-	}
-
-	@Override
 	public List<AssignedOperation> getByMedicalCardId(Integer medicalCardId) {
 		return assignedOperationDao.getByMedicalCardId(medicalCardId);
-	}
-
-	@Override
-	public List<AssignedOperation> getAll() {
-		return assignedOperationDao.getAll();
 	}
 
 	@Override
@@ -46,19 +36,8 @@ public class AssignedOperationServiceImpl implements IAssignedOperationService {
 			System.out.println("Insert new AssignedOperation");
 			assignedOperationDao.insert(assignedOperation);
 		} else {
-
 			System.out.println("Update AssignedOperation");
 			assignedOperationDao.update(assignedOperation);
 		}
-
 	}
-
-	@Override
-	public void saveMultiple(AssignedOperation... assignedOperationArray) {
-		for (AssignedOperation assignedOperation : assignedOperationArray) {
-			save(assignedOperation);
-		}
-
-	}
-
 }

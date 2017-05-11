@@ -24,7 +24,7 @@ public class DiagnosisDaoImpl implements IDiagnosisDao {
 	private JdbcTemplate jdbcTemplate;
 
 	@Override
-	public Diagnosis get(Integer id) {
+	public Diagnosis getById(Integer id) {
 		try {
 			return jdbcTemplate.queryForObject("select * from Diagnosis where id = ? ", new Object[] { id },
 					new BeanPropertyRowMapper<Diagnosis>(Diagnosis.class));
@@ -56,30 +56,10 @@ public class DiagnosisDaoImpl implements IDiagnosisDao {
 	}
 
 	@Override
-	public void delete(Integer id) {
-		jdbcTemplate.update("delete from diagnosis where id=" + id);
-	}
-
-	@Override
 	public List<Diagnosis> getAll() {
 		List<Diagnosis> rs = jdbcTemplate.query("select * from diagnosis ",
 				new BeanPropertyRowMapper<Diagnosis>(Diagnosis.class));
 		return rs;
 	}
 
-	@Override
-	public void update(Diagnosis diagnosis) {
-		final String UPDATE_SQL = "update diagnosis set name =? where id = ?";
-
-		jdbcTemplate.update(new PreparedStatementCreator() {
-			@Override
-			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-				PreparedStatement ps = connection.prepareStatement(UPDATE_SQL);
-				ps.setString(1, diagnosis.getName());
-				ps.setInt(2, diagnosis.getId());
-
-				return ps;
-			}
-		});
-	}
 }

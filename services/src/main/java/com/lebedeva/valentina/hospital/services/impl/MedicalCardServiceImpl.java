@@ -26,21 +26,6 @@ public class MedicalCardServiceImpl implements IMedicalCardService {
 	}
 
 	@Override
-	public List<MedicalCard> getByDepartmentId(Integer departmentId) {
-		return medicalCardDao.getByDepartmentId(departmentId);
-	}
-
-	@Override
-	public List<MedicalCard> getAll() {
-		return medicalCardDao.getAll();
-	}
-
-	@Override
-	public List<MedicalCard> getByDoctorId(Integer medicalWorkerId) {
-		return medicalCardDao.getByDoctorId(medicalWorkerId);
-	}
-
-	@Override
 	public void save(MedicalCard medicalCard) {
 		if (medicalCard.getId() == null) {
 			System.out.println("Insert new MedicalCard");
@@ -54,10 +39,13 @@ public class MedicalCardServiceImpl implements IMedicalCardService {
 	}
 
 	@Override
-	public void saveMultiple(MedicalCard... medicalCardArray) {
-		for (MedicalCard medicalCard : medicalCardArray) {
-			save(medicalCard);
-		}
+	public List<MedicalCard> getNotDischarge() {
+		return medicalCardDao.getNotDischarge();
+	}
+
+	@Override
+	public List<MedicalCard> getByDoctorId(Integer medicalWorkerId) {
+		return medicalCardDao.getByDoctorId(medicalWorkerId);
 	}
 
 }

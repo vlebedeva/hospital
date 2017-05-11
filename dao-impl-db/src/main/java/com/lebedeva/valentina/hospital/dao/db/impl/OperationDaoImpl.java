@@ -71,21 +71,4 @@ public class OperationDaoImpl implements IOperationDao {
 
 	}
 
-	@Override
-	public void update(Operation operation) {
-		final String UPDATE_SQL = "update operation set name =?, diagnosis_id=? where id = ?";
-
-		jdbcTemplate.update(new PreparedStatementCreator() {
-			@Override
-			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-				PreparedStatement ps = connection.prepareStatement(UPDATE_SQL);
-				ps.setString(1, operation.getName());
-				ps.setInt(2, operation.getDiagnosisId());
-				ps.setInt(3, operation.getId());
-
-				return ps;
-			}
-		});
-	}
-
 }

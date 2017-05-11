@@ -13,5 +13,4 @@ public interface IProcedureDao {
 
 	Procedure insert(Procedure procedure);
 
-	void update(Procedure procedure);
 }

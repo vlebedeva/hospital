@@ -15,14 +15,11 @@ public class ServicesTestMedicalWorker {
 		IMedicalWorkerService service = context.getBean(IMedicalWorkerService.class);
 
 		System.out.println(service.getById(1));
-		System.out.println(service.getAll());
 
 		MedicalWorker medicalWorker = new MedicalWorker(); // new object type
 															// MedicalWorker
 		service.getById(medicalWorker.getId()); // empty object
 
-		System.out.println(service.getByDepartmentId(1));
-		System.out.println(service.getByCategoty(Category.hight));
 		System.out.println(service.getByPosition(Position.DOCTOR));
 
 		/*
@@ -39,8 +36,7 @@ public class ServicesTestMedicalWorker {
 		 * System.out.println(service.getById(medicalWorker.getId()));
 		 */
 
-		System.out.println(service.getAllActive(false));
-		System.out.println(service.getBySpecialization("good dactor"));
+		System.out.println(service.getByActive(false));
 
 	}
 

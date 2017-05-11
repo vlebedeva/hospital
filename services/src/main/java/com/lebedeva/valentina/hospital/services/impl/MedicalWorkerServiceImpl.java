@@ -26,33 +26,13 @@ public class MedicalWorkerServiceImpl implements IMedicalWorkerService {
 	}
 
 	@Override
-	public List<MedicalWorker> getByDepartmentId(Integer departmentId) {
-		return medicalWorkerDao.getByDepartmentId(departmentId);
-	}
-
-	@Override
-	public List<MedicalWorker> getByCategoty(Category category) {
-		return medicalWorkerDao.getByCategoty(category);
-	}
-
-	@Override
 	public List<MedicalWorker> getByPosition(Position position) {
 		return medicalWorkerDao.getByPosition(position);
 	}
 
 	@Override
-	public List<MedicalWorker> getBySpecialization(String specialization) {
-		return medicalWorkerDao.getBySpecialization(specialization);
-	}
-
-	@Override
-	public List<MedicalWorker> getAll() {
-		return medicalWorkerDao.getAll();
-	}
-
-	@Override
-	public List<MedicalWorker> getAllActive(Boolean active) {
-		return medicalWorkerDao.getAllActive(active);
+	public List<MedicalWorker> getByActive(Boolean active) {
+		return medicalWorkerDao.getByActive(active);
 	}
 
 	@Override
@@ -67,12 +47,4 @@ public class MedicalWorkerServiceImpl implements IMedicalWorkerService {
 		}
 	}
 
-	@Override
-	public void saveMultiple(MedicalWorker... medicalWorkerArray) {
-
-		for (MedicalWorker medicalWorker : medicalWorkerArray) {
-			save(medicalWorker);
-		}
-
-	}
 }

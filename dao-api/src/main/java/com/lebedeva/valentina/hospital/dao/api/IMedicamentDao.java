@@ -13,5 +13,4 @@ public interface IMedicamentDao {
 	
 	Medicament insert(Medicament medicament);
 
-	void update(Medicament medicament);
 }

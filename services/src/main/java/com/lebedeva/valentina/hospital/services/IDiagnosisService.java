@@ -6,16 +6,10 @@ import org.springframework.transaction.annotation.Transactional;
 import com.lebedeva.valentina.hospital.datamodel.Diagnosis;
 
 public interface IDiagnosisService {
-	Diagnosis get(Integer id);
+	Diagnosis getById(Integer id);
 
 	List<Diagnosis> getAll();
 
 	@Transactional
 	void save(Diagnosis diagnosis);
-
-	@Transactional
-	void saveMultiple(Diagnosis... diagnosis);
-
-	@Transactional
-	void delete(Integer id);
 }

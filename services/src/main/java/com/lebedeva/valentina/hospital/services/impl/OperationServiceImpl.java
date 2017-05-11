@@ -40,19 +40,7 @@ public class OperationServiceImpl implements IOperationService {
 		if (operation.getId() == null) {
 			System.out.println("Insert new Operation");
 			operationDao.insert(operation);
-		} else {
-
-			System.out.println("Update Operation");
-			operationDao.update(operation);
 		}
 	}
 
-	@Override
-	public void saveMultiple(Operation... operationArray) {
-
-		for (Operation operation : operationArray) {
-			save(operation);
-		}
-
-	}
 }

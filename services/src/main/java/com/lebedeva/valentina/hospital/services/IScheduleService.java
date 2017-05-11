@@ -15,11 +15,8 @@ public interface IScheduleService {
 
 	List<Schedule> getByDate(Date date);
 
-	List<Schedule> getAll();
 
 	@Transactional
 	void save(Schedule schedule);
 
-	@Transactional
-	void saveMultiple(Schedule... schedule);
 }

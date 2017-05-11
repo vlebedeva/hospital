@@ -39,18 +39,6 @@ public class ProcedureServiceImpl implements IProcedureService {
 		if (procedure.getId() == null) {
 			System.out.println("Insert new Procedure");
 			procedureDao.insert(procedure);
-		} else {
-
-			System.out.println("Update Procedure");
-			procedureDao.update(procedure);
-		}
-	}
-
-	@Override
-	public void saveMultiple(Procedure... procedureArray) {
-
-		for (Procedure procedure : procedureArray) {
-			save(procedure);
 		}
 
 	}

@@ -36,11 +36,6 @@ public class ScheduleServiceImpl implements IScheduleService {
 	}
 
 	@Override
-	public List<Schedule> getAll() {
-		return scheduleDao.getAll();
-	}
-
-	@Override
 	public void save(Schedule schedule) {
 		if (schedule.getId() == null) {
 			System.out.println("Insert new Schedule");
@@ -50,15 +45,6 @@ public class ScheduleServiceImpl implements IScheduleService {
 			System.out.println("Update Schedule");
 			scheduleDao.update(schedule);
 		}
-	}
-
-	@Override
-	public void saveMultiple(Schedule... scheduleArray) {
-
-		for (Schedule schedule : scheduleArray) {
-			save(schedule);
-		}
-
 	}
 
 }

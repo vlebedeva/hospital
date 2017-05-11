@@ -35,21 +35,10 @@ public class MedicalCardDaoImpl implements IMedicalCardDao {
 	}
 
 	@Override
-	public List<MedicalCard> getAll() {
-		List<MedicalCard> rs = jdbcTemplate.query("select * from medical_card ORDER BY id",
-				new BeanPropertyRowMapper<MedicalCard>(MedicalCard.class));
+	public List<MedicalCard> getNotDischarge() {
+		List<MedicalCard> rs = jdbcTemplate.query("select * from medical_card where discharge_date = NULL ORDER BY id",
+				 new BeanPropertyRowMapper<MedicalCard>(MedicalCard.class));
 		return rs;
-	}
-
-	@Override
-	public List<MedicalCard> getByDepartmentId(Integer departmentId) {
-		try {
-			List<MedicalCard> rs = jdbcTemplate.query("select * from medical_card where department_id = ? ORDER BY id",
-					new Object[] { departmentId }, new BeanPropertyRowMapper<MedicalCard>(MedicalCard.class));
-			return rs;
-		} catch (EmptyResultDataAccessException e) {
-			return null;
-		}
 	}
 
 	@Override
@@ -66,7 +55,7 @@ public class MedicalCardDaoImpl implements IMedicalCardDao {
 
 	@Override
 	public MedicalCard insert(MedicalCard medicalCard) {
-		final String INSERT_SQL = "insert into medical_card ( patient_full_name, birthday, adress,document,phone_number,diagnosis_id,medical_worker_id,department_id,enter_date,discharge_date) values (?,?,?,?,?,?,?,?,?,?)";
+		final String INSERT_SQL = "insert into medical_card ( patient_full_name, birthday, pasport,diagnosis_id,medical_worker_id,department_id,enter_date) values (?,?,?,?,?,?,?)";
 
 		KeyHolder keyHolder = new GeneratedKeyHolder();
 
@@ -76,14 +65,11 @@ public class MedicalCardDaoImpl implements IMedicalCardDao {
 				PreparedStatement ps = connection.prepareStatement(INSERT_SQL, new String[] { "id" });
 				ps.setString(1, medicalCard.getPatientFullName());
 				ps.setDate(2, medicalCard.getBirthday());
-				ps.setString(3, medicalCard.getAdress());
-				ps.setString(4, medicalCard.getDocument());
-				ps.setString(5, medicalCard.getPhoneNumber());
-				ps.setInt(6, medicalCard.getDiagnosisId());
-				ps.setInt(7, medicalCard.getMedicalWorkerId());
-				ps.setInt(8, medicalCard.getDepartmentId());
-				ps.setDate(9, medicalCard.getEnterDate());
-				ps.setDate(10, medicalCard.getDischargeDate());
+				ps.setString(3, medicalCard.getPasport());
+				ps.setInt(4, medicalCard.getDiagnosisId());
+				ps.setInt(5, medicalCard.getMedicalWorkerId());
+				ps.setInt(6, medicalCard.getDepartmentId());
+				ps.setDate(7, medicalCard.getEnterDate());
 				return ps;
 			}
 		}, keyHolder);
@@ -95,7 +81,7 @@ public class MedicalCardDaoImpl implements IMedicalCardDao {
 
 	@Override
 	public void update(MedicalCard medicalCard) {
-		final String UPDATE_SQL = "update medical_card set patient_full_name=?, birthday=?, adress=?,document=?,phone_number=?,diagnosis_id=?,medical_worker_id=?,department_id=?,enter_date=?,discharge_date=? where id = ?";
+		final String UPDATE_SQL = "update medical_card set patient_full_name=?, birthday=?, pasport=?,diagnosis_id=?,medical_worker_id=?,department_id=?,enter_date=?,discharge_date=? where id = ?";
 
 		jdbcTemplate.update(new PreparedStatementCreator() {
 			@Override
@@ -103,15 +89,13 @@ public class MedicalCardDaoImpl implements IMedicalCardDao {
 				PreparedStatement ps = connection.prepareStatement(UPDATE_SQL);
 				ps.setString(1, medicalCard.getPatientFullName());
 				ps.setDate(2, medicalCard.getBirthday());
-				ps.setString(3, medicalCard.getAdress());
-				ps.setString(4, medicalCard.getDocument());
-				ps.setString(5, medicalCard.getPhoneNumber());
-				ps.setInt(6, medicalCard.getDiagnosisId());
-				ps.setInt(7, medicalCard.getMedicalWorkerId());
-				ps.setInt(8, medicalCard.getDepartmentId());
-				ps.setDate(9, medicalCard.getEnterDate());
-				ps.setDate(10, medicalCard.getDischargeDate());
-				ps.setInt(11, medicalCard.getId());
+				ps.setString(3, medicalCard.getPasport());
+				ps.setInt(4, medicalCard.getDiagnosisId());
+				ps.setInt(5, medicalCard.getMedicalWorkerId());
+				ps.setInt(6, medicalCard.getDepartmentId());
+				ps.setDate(7, medicalCard.getEnterDate());
+				ps.setDate(8, medicalCard.getDischargeDate());
+				ps.setInt(9, medicalCard.getId());
 				return ps;
 			}
 		});

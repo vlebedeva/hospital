@@ -12,24 +12,24 @@ public class ServicesTestDiagnosis {
 
 		IDiagnosisService service = context.getBean(IDiagnosisService.class);
 
-		System.out.println(service.get(1));
+		System.out.println(service.getById(1));
 		System.out.println(service.getAll());
 
 		Diagnosis diagnosis = new Diagnosis(); // new object type Department
-		service.get(diagnosis.getId()); // empty object
+		service.getById(diagnosis.getId()); // empty object
 
-		service.get(2);
-		System.out.println(service.get(2));
+		service.getById(2);
+		System.out.println(service.getById(2));
 		 diagnosis.setId(2);
 		diagnosis.setName("diagnosis 5");
 
 		System.out.println(diagnosis);
 		service.save(diagnosis);
-		System.out.println(service.get(2));
+		System.out.println(service.getById(2));
 
 		System.out.println("Saved diagnosis:" + diagnosis);
 		System.out.println(service.getAll());
-		System.out.println(service.get(diagnosis.getId()));
+		System.out.println(service.getById(diagnosis.getId()));
 		//service.delete(diagnosis.getId());
 		// System.out.println(service.get(diagnosis.getId()));
 

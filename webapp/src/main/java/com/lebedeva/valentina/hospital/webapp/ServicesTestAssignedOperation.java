@@ -13,7 +13,6 @@ public class ServicesTestAssignedOperation {
 		IAssignedOperationService service = context.getBean(IAssignedOperationService.class);
 
 		System.out.println(service.getById(2));
-		System.out.println(service.getAll());
 
 		AssignedOperation assignedOperation = new AssignedOperation(); // new object type AssignedMedicament
 		service.getById(assignedOperation.getId()); // empty object
@@ -38,7 +37,6 @@ public class ServicesTestAssignedOperation {
 		service.save(assignedOperation);
 
 		System.out.println("Saved assignedOperation:" + assignedOperation);
-		System.out.println(service.getAll());
 
 	
 	}

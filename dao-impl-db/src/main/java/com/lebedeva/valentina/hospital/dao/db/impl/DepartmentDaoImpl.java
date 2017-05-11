@@ -18,16 +18,14 @@ import org.springframework.stereotype.Repository;
 import com.lebedeva.valentina.hospital.dao.api.IDepartmentDao;
 import com.lebedeva.valentina.hospital.datamodel.Department;
 
-
 @Repository
 public class DepartmentDaoImpl implements IDepartmentDao {
-	
-	
+
 	@Inject
 	private JdbcTemplate jdbcTemplate;
 
 	@Override
-	public Department get(Integer id) {
+	public Department getById(Integer id) {
 		try {
 			return jdbcTemplate.queryForObject("select * from department where id = ? ", new Object[] { id },
 					new BeanPropertyRowMapper<Department>(Department.class));
@@ -65,28 +63,25 @@ public class DepartmentDaoImpl implements IDepartmentDao {
 
 	@Override
 	public List<Department> getAll() {
-		List<Department> rs = jdbcTemplate.query("select * from department ",
+		List<Department> rs = jdbcTemplate.query("select * from department ORDER BY id",
 				new BeanPropertyRowMapper<Department>(Department.class));
 		return rs;
 	}
-	
-	
+
 	@Override
-    public void update(Department department) {
+	public void update(Department department) {
 		final String UPDATE_SQL = "update department set name =? where id = ?";
-		
-        jdbcTemplate.update(new PreparedStatementCreator() {
-            @Override
-            public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-                PreparedStatement ps = connection.prepareStatement(UPDATE_SQL);
-                ps.setString(1, department.getName());
-                ps.setInt(2, department.getId());
- 
-                return ps;
-            }
-        });
-    }
- 
+
+		jdbcTemplate.update(new PreparedStatementCreator() {
+			@Override
+			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
+				PreparedStatement ps = connection.prepareStatement(UPDATE_SQL);
+				ps.setString(1, department.getName());
+				ps.setInt(2, department.getId());
+
+				return ps;
+			}
+		});
+	}
+
 }
-
-

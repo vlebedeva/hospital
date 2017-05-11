@@ -35,19 +35,6 @@ public class AssignedProcedureDaoImpl implements IAssignedProcedureDao {
 	}
 
 	@Override
-	public List<AssignedProcedure> getByMedicalWorkerId(Integer medicalWorkerId) {
-		try {
-			List<AssignedProcedure> rs = jdbcTemplate.query(
-					"select * from assigned_procedure where medical_worker_id = ? ORDER BY id",
-					new Object[] { medicalWorkerId },
-					new BeanPropertyRowMapper<AssignedProcedure>(AssignedProcedure.class));
-			return rs;
-		} catch (EmptyResultDataAccessException e) {
-			return null;
-		}
-	}
-
-	@Override
 	public List<AssignedProcedure> getByMedicalCardId(Integer medicalCardId) {
 		try {
 			List<AssignedProcedure> rs = jdbcTemplate.query(
@@ -58,13 +45,6 @@ public class AssignedProcedureDaoImpl implements IAssignedProcedureDao {
 		} catch (EmptyResultDataAccessException e) {
 			return null;
 		}
-	}
-
-	@Override
-	public List<AssignedProcedure> getAll() {
-		List<AssignedProcedure> rs = jdbcTemplate.query("select * from assigned_procedure ORDER BY id",
-				new BeanPropertyRowMapper<AssignedProcedure>(AssignedProcedure.class));
-		return rs;
 	}
 
 	@Override

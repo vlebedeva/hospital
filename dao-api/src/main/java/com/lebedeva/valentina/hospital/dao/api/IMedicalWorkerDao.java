@@ -10,17 +10,9 @@ public interface IMedicalWorkerDao {
 	
 	MedicalWorker getById(Integer id);
 
-	List<MedicalWorker> getByDepartmentId(Integer departmentId);
-
-	List<MedicalWorker> getByCategoty(Category category);
-	
 	List<MedicalWorker> getByPosition(Position position);
 
-	List<MedicalWorker> getBySpecialization (String specialization);
-	
-	List<MedicalWorker> getAll();
-	
-	List<MedicalWorker> getAllActive(Boolean active);
+	List<MedicalWorker> getByActive(Boolean active);
 	
 	MedicalWorker insert(MedicalWorker medicalWorker);
 

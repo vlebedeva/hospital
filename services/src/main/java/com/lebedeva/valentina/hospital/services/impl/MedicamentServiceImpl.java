@@ -39,19 +39,7 @@ public class MedicamentServiceImpl implements IMedicamentService {
 		if (medicament.getId() == null) {
 			System.out.println("Insert new Medicament");
 			medicamentDao.insert(medicament);
-		} else {
-
-			System.out.println("Update Medicament");
-			medicamentDao.update(medicament);
 		}
 	}
 
-	@Override
-	public void saveMultiple(Medicament... medicamentArray) {
-
-		for (Medicament medicament : medicamentArray) {
-			save(medicament);
-		}
-
-	}
 }

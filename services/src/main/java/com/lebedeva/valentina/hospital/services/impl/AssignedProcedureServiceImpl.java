@@ -26,18 +26,8 @@ public class AssignedProcedureServiceImpl implements IAssignedProcedureService {
 	}
 
 	@Override
-	public List<AssignedProcedure> getByMedicalWorkerId(Integer medicalWorkerId) {
-		return assignedProcedureDao.getByMedicalWorkerId(medicalWorkerId);
-	}
-
-	@Override
 	public List<AssignedProcedure> getByMedicalCardId(Integer medicalCardId) {
 		return assignedProcedureDao.getByMedicalCardId(medicalCardId);
-	}
-
-	@Override
-	public List<AssignedProcedure> getAll() {
-		return assignedProcedureDao.getAll();
 	}
 
 	@Override
@@ -46,18 +36,8 @@ public class AssignedProcedureServiceImpl implements IAssignedProcedureService {
 			System.out.println("Insert new AssignedProcedure");
 			assignedProcedureDao.insert(assignedProcedure);
 		} else {
-
-			System.out.println("Update AssignedMedicament");
+			System.out.println("Update AssignedProcedure");
 			assignedProcedureDao.update(assignedProcedure);
 		}
 	}
-
-	@Override
-	public void saveMultiple(AssignedProcedure... assignedProcedureArray) {
-		for (AssignedProcedure assignedProcedure : assignedProcedureArray) {
-			save(assignedProcedure);
-		}
-
-	}
-
 }

@@ -35,19 +35,6 @@ public class AssignedOperationDaoImpl implements IAssignedOperationDao {
 	}
 
 	@Override
-	public List<AssignedOperation> getByMedicalWorkerId(Integer medicalWorkerId) {
-		try {
-			List<AssignedOperation> rs = jdbcTemplate.query(
-					"select * from assigned_operation where medical_worker_id = ? ORDER BY id",
-					new Object[] { medicalWorkerId },
-					new BeanPropertyRowMapper<AssignedOperation>(AssignedOperation.class));
-			return rs;
-		} catch (EmptyResultDataAccessException e) {
-			return null;
-		}
-	}
-
-	@Override
 	public List<AssignedOperation> getByMedicalCardId(Integer medicalCardId) {
 		try {
 			List<AssignedOperation> rs = jdbcTemplate.query(
@@ -58,13 +45,6 @@ public class AssignedOperationDaoImpl implements IAssignedOperationDao {
 		} catch (EmptyResultDataAccessException e) {
 			return null;
 		}
-	}
-
-	@Override
-	public List<AssignedOperation> getAll() {
-		List<AssignedOperation> rs = jdbcTemplate.query("select * from assigned_operation ORDER BY id",
-				new BeanPropertyRowMapper<AssignedOperation>(AssignedOperation.class));
-		return rs;
 	}
 
 	@Override

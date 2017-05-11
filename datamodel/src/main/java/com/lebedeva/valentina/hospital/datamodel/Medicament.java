@@ -1,6 +1,7 @@
 package com.lebedeva.valentina.hospital.datamodel;
 
 public class Medicament {
+	
 	private Integer id;
 	private String name;
 	private Integer diagnosisId;

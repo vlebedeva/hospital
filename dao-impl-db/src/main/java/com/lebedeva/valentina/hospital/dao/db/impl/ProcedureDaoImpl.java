@@ -70,20 +70,4 @@ public class ProcedureDaoImpl implements IProcedureDao {
 
 	}
 
-	@Override
-	public void update(Procedure procedure) {
-		final String UPDATE_SQL = "update procedure set name =?, diagnosis_id=? where id = ?";
-
-		jdbcTemplate.update(new PreparedStatementCreator() {
-			@Override
-			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-				PreparedStatement ps = connection.prepareStatement(UPDATE_SQL);
-				ps.setString(1, procedure.getName());
-				ps.setInt(2, procedure.getDiagnosisId());
-				ps.setInt(3, procedure.getId());
-
-				return ps;
-			}
-		});
-	}
 }

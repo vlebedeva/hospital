@@ -9,7 +9,7 @@ public class MedicalWorker {
 	private Category category;
 	private Integer departmentId;
 	private Boolean active;
-	private String email;
+	private String login;
 
 	public Integer getId() {
 		return id;
@@ -67,19 +67,20 @@ public class MedicalWorker {
 		this.active = active;
 	}
 
-	public String getEmail() {
-		return email;
+	
+	public String getLogin() {
+		return login;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setLogin(String login) {
+		this.login = login;
 	}
 
 	@Override
 	public String toString() {
 		return String.format(
-				"MedicalWorker [id = %s fullName = %s position = %s specialization = %s category = %s departmentId = %s email = %s active = %s]",
-				id, fullName, position, specialization, category, departmentId, email, active);
+				"MedicalWorker [id = %s fullName = %s position = %s specialization = %s category = %s departmentId = %s login = %s active = %s]",
+				id, fullName, position, specialization, category, departmentId, login, active);
 	}
 
 }

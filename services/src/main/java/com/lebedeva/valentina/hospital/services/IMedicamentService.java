@@ -16,6 +16,4 @@ public interface IMedicamentService {
 	@Transactional
 	void save(Medicament medicament);
 
-	@Transactional
-	void saveMultiple(Medicament... medicament);
 }

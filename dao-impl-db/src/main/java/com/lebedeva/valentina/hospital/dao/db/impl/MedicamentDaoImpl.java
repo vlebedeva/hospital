@@ -71,21 +71,4 @@ public class MedicamentDaoImpl implements IMedicamentDao {
 
 	}
 
-	@Override
-	public void update(Medicament medicament) {
-		final String UPDATE_SQL = "update medicament set name =?, diagnosis_id=? where id = ?";
-
-		jdbcTemplate.update(new PreparedStatementCreator() {
-			@Override
-			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-				PreparedStatement ps = connection.prepareStatement(UPDATE_SQL);
-				ps.setString(1, medicament.getName());
-				ps.setInt(2, medicament.getDiagnosisId());
-				ps.setInt(3, medicament.getId());
-
-				return ps;
-			}
-		});
-	}
-
 }

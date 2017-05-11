@@ -16,6 +16,4 @@ public interface IProcedureService {
 	@Transactional
 	void save(Procedure procedure);
 
-	@Transactional
-	void saveMultiple(Procedure... procedure);
 }

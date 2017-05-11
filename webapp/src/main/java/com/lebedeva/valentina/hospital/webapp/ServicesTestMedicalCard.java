@@ -14,13 +14,11 @@ public class ServicesTestMedicalCard {
 		IMedicalCardService service = context.getBean(IMedicalCardService.class);
 
 		System.out.println(service.getById(1));
-		System.out.println(service.getAll());
 
 		MedicalCard medicalCard = new MedicalCard(); // new object type
 														// MedicalCard
 		service.getById(medicalCard.getId()); // empty object
 
-		System.out.println(service.getByDepartmentId(1));
 		System.out.println(service.getByDoctorId(3));
 
 		java.util.Date date = new java.util.Date();
@@ -30,9 +28,7 @@ public class ServicesTestMedicalCard {
 		medicalCard.setPatientFullName("patient from java");
 		medicalCard.setBirthday(stDate.valueOf("1987-03-17"));
 		medicalCard.setDepartmentId(2);
-		medicalCard.setAdress("adress from java");
-		medicalCard.setDocument("docunent from java");
-		medicalCard.setPhoneNumber("123-45-67");
+		medicalCard.setPasport("docunent from java");
 		medicalCard.setDiagnosisId(3);
 		medicalCard.setEnterDate(stDate);
 		medicalCard.setMedicalWorkerId(4);

@@ -36,19 +36,6 @@ public class AssignedMedicamentDaoImpl implements IAssignedMedicamentDao {
 	}
 
 	@Override
-	public List<AssignedMedicament> getByMedicalWorkerId(Integer medicalWorkerId) {
-		try {
-			List<AssignedMedicament> rs = jdbcTemplate.query(
-					"select * from assigned_medicament where medical_worker_id = ? ORDER BY id",
-					new Object[] { medicalWorkerId },
-					new BeanPropertyRowMapper<AssignedMedicament>(AssignedMedicament.class));
-			return rs;
-		} catch (EmptyResultDataAccessException e) {
-			return null;
-		}
-	}
-
-	@Override
 	public List<AssignedMedicament> getByMedicalCardId(Integer medicalCardId) {
 		try {
 			List<AssignedMedicament> rs = jdbcTemplate.query(
@@ -59,13 +46,6 @@ public class AssignedMedicamentDaoImpl implements IAssignedMedicamentDao {
 		} catch (EmptyResultDataAccessException e) {
 			return null;
 		}
-	}
-
-	@Override
-	public List<AssignedMedicament> getAll() {
-		List<AssignedMedicament> rs = jdbcTemplate.query("select * from assigned_medicament ORDER BY id",
-				new BeanPropertyRowMapper<AssignedMedicament>(AssignedMedicament.class));
-		return rs;
 	}
 
 	@Override

@@ -7,9 +7,7 @@ public class MedicalCard {
 	private Integer id;
 	private String patientFullName;
 	private Date birthday;
-	private String adress;
-	private String document;
-	private String phoneNumber;
+	private String pasport;
 	private Integer diagnosisId;
 	private Integer medicalWorkerId;
 	private Integer departmentId;
@@ -40,28 +38,12 @@ public class MedicalCard {
 		this.birthday = birthday;
 	}
 
-	public String getAdress() {
-		return adress;
+	public String getPasport() {
+		return pasport;
 	}
 
-	public void setAdress(String adress) {
-		this.adress = adress;
-	}
-
-	public String getDocument() {
-		return document;
-	}
-
-	public void setDocument(String document) {
-		this.document = document;
-	}
-
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
+	public void setPasport(String pasport) {
+		this.pasport = pasport;
 	}
 
 	public Integer getDiagnosisId() {
@@ -107,9 +89,9 @@ public class MedicalCard {
 	@Override
 	public String toString() {
 		return String.format(
-				"MedicalCard [id = %s patientFullName = %s birthday = %s adress = %s document = %s phoneNumber = %s diagnosisId = %s medicalWorkerId = %s departmentId = %s enterDate = %s dischargeDate = %s]",
-				id, patientFullName, birthday, adress, document, phoneNumber, diagnosisId, medicalWorkerId,
-				departmentId, enterDate, dischargeDate);
+				"MedicalCard [id = %s patientFullName = %s birthday = %s  pasport = %s  diagnosisId = %s medicalWorkerId = %s departmentId = %s enterDate = %s dischargeDate = %s]",
+				id, patientFullName, birthday, pasport, diagnosisId, medicalWorkerId, departmentId, enterDate,
+				dischargeDate);
 	}
 
 }

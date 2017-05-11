@@ -7,9 +7,7 @@ import com.lebedeva.valentina.hospital.datamodel.MedicalCard;
 public interface IMedicalCardDao {
 	MedicalCard getById(Integer id);
 
-	List<MedicalCard> getAll();
-
-	List<MedicalCard> getByDepartmentId(Integer departmentId);
+	List<MedicalCard> getNotDischarge();
 
 	List<MedicalCard> getByDoctorId(Integer medicalWorkerId);
 

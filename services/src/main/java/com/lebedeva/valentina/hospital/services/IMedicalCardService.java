@@ -10,15 +10,11 @@ public interface IMedicalCardService {
 
 	MedicalCard getById(Integer id);
 
-	List<MedicalCard> getByDepartmentId(Integer departmentId);
-
-	List<MedicalCard> getAll();
-
+	List<MedicalCard> getNotDischarge();
+	
 	List<MedicalCard> getByDoctorId(Integer medicalWorkerId);
 
 	@Transactional
 	void save(MedicalCard medicalCard);
 
-	@Transactional
-	void saveMultiple(MedicalCard... medicalCard);
 }

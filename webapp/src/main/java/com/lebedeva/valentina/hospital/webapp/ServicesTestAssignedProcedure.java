@@ -13,24 +13,26 @@ public class ServicesTestAssignedProcedure {
 		IAssignedProcedureService service = context.getBean(IAssignedProcedureService.class);
 
 		System.out.println(service.getById(3));
-		System.out.println(service.getAll());
 
-		AssignedProcedure assignedProcedure = new AssignedProcedure(); // new object type AssignedProcedure
+		AssignedProcedure assignedProcedure = new AssignedProcedure(); // new
+																		// object
+																		// type
+																		// AssignedProcedure
 		service.getById(assignedProcedure.getId()); // empty object
 
-		//service.getById(3);
-		//System.out.println(service.getById(3));
-	
+		// service.getById(3);
+		// System.out.println(service.getById(3));
+
 		assignedProcedure.setMedicalCardId(3);
 		assignedProcedure.setProcedureId(2);
-	
+
 		assignedProcedure.setAnnotation("evening");
 
 		java.util.Date date = new java.util.Date();
 		java.sql.Date stDate = new java.sql.Date(date.getTime());
 		java.sql.Time time = new java.sql.Time(date.getTime());
 
-		//for update
+		// for update
 		assignedProcedure.setAssigned(stDate);
 		assignedProcedure.setDone(time);
 		assignedProcedure.setMedicalWorkerId(3);
@@ -40,9 +42,7 @@ public class ServicesTestAssignedProcedure {
 		service.save(assignedProcedure);
 
 		System.out.println("Saved assignedProcedure:" + assignedProcedure);
-		System.out.println(service.getAll());
 
-	
 	}
 
 }

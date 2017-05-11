@@ -13,5 +13,4 @@ public interface IOperationDao {
 	
 	Operation insert(Operation operation);
 
-	void update(Operation operation);
 }

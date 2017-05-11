@@ -20,8 +20,8 @@ public class DiagnosisServiceImpl implements IDiagnosisService {
 	private IDiagnosisDao diagnosisDao;
 
 	@Override
-	public Diagnosis get(Integer id) {
-		return diagnosisDao.get(id);
+	public Diagnosis getById(Integer id) {
+		return diagnosisDao.getById(id);
 	}
 
 	@Override
@@ -34,25 +34,7 @@ public class DiagnosisServiceImpl implements IDiagnosisService {
 		if (diagnosis.getId() == null) {
 			System.out.println("Insert new Diagnosis");
 			diagnosisDao.insert(diagnosis);
-		} else {
-
-			System.out.println("Update Diagnosis");
-			diagnosisDao.update(diagnosis);
 		}
 	}
 
-	@Override
-	public void delete(Integer id) {
-		diagnosisDao.delete(id);
-
-	}
-
-	@Override
-	public void saveMultiple(Diagnosis... diagnosisArray) {
-
-		for (Diagnosis diagnosis : diagnosisArray) {
-			save(diagnosis);
-		}
-
-	}
 }

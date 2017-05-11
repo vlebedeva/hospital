@@ -16,6 +16,4 @@ public interface IOperationService {
 	@Transactional
 	void save(Operation operation);
 
-	@Transactional
-	void saveMultiple(Operation... operation);
 }
