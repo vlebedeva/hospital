@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.lebedeva.valentina.hospital.dao.api.IMedicalWorkerDao;
 import com.lebedeva.valentina.hospital.datamodel.Category;
 import com.lebedeva.valentina.hospital.datamodel.MedicalWorker;
+import com.lebedeva.valentina.hospital.datamodel.MedicalWorkerWithDepartment;
 import com.lebedeva.valentina.hospital.datamodel.Position;
 import com.lebedeva.valentina.hospital.services.IMedicalWorkerService;
 
@@ -45,6 +46,11 @@ public class MedicalWorkerServiceImpl implements IMedicalWorkerService {
 			System.out.println("Update MedicalWorker");
 			medicalWorkerDao.update(medicalWorker);
 		}
+	}
+
+	@Override
+	public List<MedicalWorkerWithDepartment> getMedicalWorkerWithDepartment(Position position) {
+		return medicalWorkerDao.getMedicalWorkerWithDepartment(position);
 	}
 
 }

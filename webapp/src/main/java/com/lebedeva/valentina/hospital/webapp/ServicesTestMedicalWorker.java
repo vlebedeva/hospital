@@ -14,13 +14,17 @@ public class ServicesTestMedicalWorker {
 
 		IMedicalWorkerService service = context.getBean(IMedicalWorkerService.class);
 
-		System.out.println(service.getById(1));
+		System.out.println(service.getById(4));
 
 		MedicalWorker medicalWorker = new MedicalWorker(); // new object type
 															// MedicalWorker
 		service.getById(medicalWorker.getId()); // empty object
 
-		System.out.println(service.getByPosition(Position.DOCTOR));
+		System.out.println(service.getMedicalWorkerWithDepartment(Position.DOCTOR));
+		
+		
+		
+		//System.out.println(service.getByPosition(Position.DOCTOR));
 
 		/*
 		 * medicalWorker.setId(2);

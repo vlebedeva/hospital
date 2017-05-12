@@ -17,6 +17,7 @@ import org.springframework.stereotype.Repository;
 
 import com.lebedeva.valentina.hospital.dao.api.IMedicalWorkerDao;
 import com.lebedeva.valentina.hospital.datamodel.MedicalWorker;
+import com.lebedeva.valentina.hospital.datamodel.MedicalWorkerWithDepartment;
 import com.lebedeva.valentina.hospital.datamodel.Position;
 
 @Repository
@@ -105,6 +106,14 @@ public class MedicalWorkerDaoImpl implements IMedicalWorkerDao {
 				return ps;
 			}
 		});
+	}
+
+	@Override
+	public List<MedicalWorkerWithDepartment> getMedicalWorkerWithDepartment(Position position) {
+		List<MedicalWorkerWithDepartment> rs = jdbcTemplate.query("SELECT medical_worker.full_name, medical_worker.specialization, medical_worker.category, department.name from medical_worker left join department on  medical_worker.department_id=department.id where  medical_worker.active = TRUE and   medical_worker.position = '"
+				+ position + " ' ORDER BY  medical_worker.id;",
+                new BeanPropertyRowMapper<MedicalWorkerWithDepartment>(MedicalWorkerWithDepartment.class));
+        return rs;
 	}
 
 }
