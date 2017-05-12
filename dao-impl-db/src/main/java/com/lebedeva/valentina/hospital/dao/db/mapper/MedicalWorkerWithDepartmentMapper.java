@@ -15,13 +15,13 @@ public final class MedicalWorkerWithDepartmentMapper implements RowMapper<Medica
 	@Override
 	public MedicalWorkerWithDepartment mapRow(ResultSet rs, int rowNum) throws SQLException {
 		MedicalWorker medicalWorker = new MedicalWorker();
-		medicalWorker.setId(rs.getInt("id"));
+		//medicalWorker.setId(rs.getInt("id"));
 		medicalWorker.setFullName(rs.getString("full_name"));
 		medicalWorker.setSpecialization(rs.getString("specialization"));
 		medicalWorker.setCategory(Category.valueOf(rs.getString("category")));
 
 		Department department = new Department();
-		department.setId(rs.getInt("id"));
+		//department.setId(rs.getInt("id"));
 		department.setName(rs.getString("name"));
 
 		MedicalWorkerWithDepartment medicalWorkerWithDepartment = new MedicalWorkerWithDepartment();

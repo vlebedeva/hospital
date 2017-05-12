@@ -20,9 +20,6 @@ public class ServicesTestMedicalWorker {
 															// MedicalWorker
 		service.getById(medicalWorker.getId()); // empty object
 
-		System.out.println(service.getMedicalWorkerWithDepartment(Position.DOCTOR));
-		
-		
 		
 		//System.out.println(service.getByPosition(Position.DOCTOR));
 
@@ -33,15 +30,17 @@ public class ServicesTestMedicalWorker {
 		 * medicalWorker.setCategory(Category.first);
 		 * medicalWorker.setPosition(Position.DOCTOR);
 		 * medicalWorker.setSpecialization("good doctor");
-		 * medicalWorker.setActive(true); medicalWorker.setEmail("asd@dfg.vf");
+		 * medicalWorker.setActive(true); 
 		 * 
 		 * service.save(medicalWorker);
 		 * 
 		 * System.out.println(service.getById(medicalWorker.getId()));
 		 */
 
-		System.out.println(service.getByActive(false));
-
+		System.out.println(service.getByActive(true));
+		
+		System.out.println(service.getMedicalWorkerWithDepartment(Position.DOCTOR));
+		
 	}
 
 }

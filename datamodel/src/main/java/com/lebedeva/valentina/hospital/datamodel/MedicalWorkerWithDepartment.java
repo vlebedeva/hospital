@@ -21,4 +21,9 @@ public class MedicalWorkerWithDepartment {
 		this.department = department;
 	}
 
+	@Override
+	public String toString() {
+		return "MedicalWorkerWithDepartment [full_name=" + medicalWorker.getFullName() + ", specialization=" + medicalWorker.getSpecialization() + ", category=" + medicalWorker.getCategory() +", department=" + department.getName() + "]";
+	}
+
 }
