@@ -26,7 +26,7 @@ public class ServicesTestMedicalWorker {
 		medicalWorker.setCategory(Category.first);
 		medicalWorker.setPosition(Position.DOCTOR);
 		medicalWorker.setSpecialization("spec 1");
-		medicalWorker.setLogin("asdfg");
+		medicalWorker.setLogin("asdfghjklkjg");
 		medicalWorker.setActive(true);
 
 		service.save(medicalWorker);

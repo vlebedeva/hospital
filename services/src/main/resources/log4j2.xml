@@ -1,25 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration>
-
+	<!--  <Properties>
+		<Property name="basePath">logs//</Property>
+		<property name="receipients">victorlebedzeu@gmail.com</property>
+		<property name="from">victorlebedzeu@gmail.com</property>
+		<property name="smtpHost">smtp.gmail.com</property>
+		<property name="smtpPort">587</property>
+		<property name="smtpProtocol">smtp</property>
+	</Properties>-->
 	<Appenders>
 		<Console name="Console" target="SYSTEM_OUT">
 			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
 		</Console>
 
-
-		<RollingFile name="RollingFile" fileName="D:/1_training/Epam/hospital/log_file.log"
-			filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+		<RollingFile name="RollingFile"
+			fileName="D:/1_training/Epam/hospital/log_file.log" filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
 			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
 			<Policies>
 				<TimeBasedTriggeringPolicy />
 				<SizeBasedTriggeringPolicy size="250 MB" />
 			</Policies>
 		</RollingFile>
-		
-		
-		
-		
-		
+
+		<!-- <SMTP name="Mailer">
+			  subject="Mail from log4j" 
+			  to="${receipients}"
+			  from="${from}" 
+			  smtpHost="${smtpHost}" 
+			  smtpPort="${smtpPort}"
+			  smtpProtocol="${smtpProtocol}" 
+			  smtpDebug="info" bufferSize="512">
+			  <PatternLayout>
+				<pattern charset="CP1251">[%5p] %d{yyyy-MM-dd HH:mm:ss} %c{1}:%L - %m%n </pattern>
+			  </PatternLayout>
+		</SMTP>-->
 	</Appenders>
 
 	<Loggers>
@@ -27,11 +41,11 @@
 			<AppenderRef ref="Console" />
 		</Root>
 
-
 		<Logger level="info" name="com.lebedeva.valentina.hospital.services.impl"
 			additivity="false">
 			<AppenderRef ref="Console" />
 			<AppenderRef ref="RollingFile" />
+			<!-- <AppenderRef ref="Mailer"  /> -->
 		</Logger>
 
 	</Loggers>
