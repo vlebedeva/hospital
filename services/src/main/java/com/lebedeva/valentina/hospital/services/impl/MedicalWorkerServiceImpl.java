@@ -7,7 +7,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.lebedeva.valentina.hospital.dao.api.IMedicalWorkerDao;
-import com.lebedeva.valentina.hospital.datamodel.Category;
 import com.lebedeva.valentina.hospital.datamodel.MedicalWorker;
 import com.lebedeva.valentina.hospital.datamodel.MedicalWorkerWithDepartment;
 import com.lebedeva.valentina.hospital.datamodel.Position;
@@ -41,10 +40,13 @@ public class MedicalWorkerServiceImpl implements IMedicalWorkerService {
 		if (medicalWorker.getId() == null) {
 			System.out.println("Insert new MedicalWorker");
 			medicalWorkerDao.insert(medicalWorker);
+			LOGGER.info("New Medical Worker with id = {} added successfully", medicalWorker.getId());
+			LOGGER.info("New Medical Worker added");
 		} else {
 
 			System.out.println("Update MedicalWorker");
 			medicalWorkerDao.update(medicalWorker);
+			LOGGER.info("Medical Worker updated");
 		}
 	}
 

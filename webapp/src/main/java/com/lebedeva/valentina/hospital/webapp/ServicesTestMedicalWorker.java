@@ -20,27 +20,25 @@ public class ServicesTestMedicalWorker {
 															// MedicalWorker
 		service.getById(medicalWorker.getId()); // empty object
 
-		
-		//System.out.println(service.getByPosition(Position.DOCTOR));
+		// medicalWorker.setId(2);
+		medicalWorker.setFullName("doctor from java");
+		medicalWorker.setDepartmentId(2);
+		medicalWorker.setCategory(Category.first);
+		medicalWorker.setPosition(Position.DOCTOR);
+		medicalWorker.setSpecialization("spec 1");
+		medicalWorker.setLogin("asdfg");
+		medicalWorker.setActive(true);
 
-		/*
-		 * medicalWorker.setId(2);
-		 * medicalWorker.setFullName("doctor from java");
-		 * medicalWorker.setDepartmentId(2);
-		 * medicalWorker.setCategory(Category.first);
-		 * medicalWorker.setPosition(Position.DOCTOR);
-		 * medicalWorker.setSpecialization("good doctor");
-		 * medicalWorker.setActive(true); 
-		 * 
-		 * service.save(medicalWorker);
-		 * 
-		 * System.out.println(service.getById(medicalWorker.getId()));
-		 */
+		service.save(medicalWorker);
+
+		System.out.println(service.getById(medicalWorker.getId()));
 
 		System.out.println(service.getByActive(true));
-		
+
 		System.out.println(service.getMedicalWorkerWithDepartment(Position.DOCTOR));
 		
+		context.close();
+
 	}
 
 }
