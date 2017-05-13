@@ -41,7 +41,6 @@ public class MedicalWorkerServiceImpl implements IMedicalWorkerService {
 			System.out.println("Insert new MedicalWorker");
 			medicalWorkerDao.insert(medicalWorker);
 			LOGGER.info("New Medical Worker with id = {} added successfully", medicalWorker.getId());
-			LOGGER.info("New Medical Worker added");
 		} else {
 
 			System.out.println("Update MedicalWorker");

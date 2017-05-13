@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration>
-	<!--  <Properties>
+	  <Properties>
 		<Property name="basePath">logs//</Property>
 		<property name="receipients">victorlebedzeu@gmail.com</property>
 		<property name="from">victorlebedzeu@gmail.com</property>
 		<property name="smtpHost">smtp.gmail.com</property>
 		<property name="smtpPort">587</property>
 		<property name="smtpProtocol">smtp</property>
-	</Properties>-->
+	</Properties>
 	<Appenders>
 		<Console name="Console" target="SYSTEM_OUT">
 			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
@@ -22,7 +22,7 @@
 			</Policies>
 		</RollingFile>
 
-		<!-- <SMTP name="Mailer">
+		 <SMTP name="Mailer"
 			  subject="Mail from log4j" 
 			  to="${receipients}"
 			  from="${from}" 
@@ -33,7 +33,7 @@
 			  <PatternLayout>
 				<pattern charset="CP1251">[%5p] %d{yyyy-MM-dd HH:mm:ss} %c{1}:%L - %m%n </pattern>
 			  </PatternLayout>
-		</SMTP>-->
+		</SMTP>
 	</Appenders>
 
 	<Loggers>
@@ -45,7 +45,7 @@
 			additivity="false">
 			<AppenderRef ref="Console" />
 			<AppenderRef ref="RollingFile" />
-			<!-- <AppenderRef ref="Mailer"  /> -->
+			<AppenderRef ref="Mailer"  /> 
 		</Logger>
 
 	</Loggers>
