@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.lebedeva.valentina.hospital.dao.api.IMedicalCardDao;
 import com.lebedeva.valentina.hospital.datamodel.MedicalCard;
+import com.lebedeva.valentina.hospital.datamodel.MedicalCardWithDepartment;
 import com.lebedeva.valentina.hospital.services.IMedicalCardService;
 
 @Service
@@ -46,6 +47,11 @@ public class MedicalCardServiceImpl implements IMedicalCardService {
 	@Override
 	public List<MedicalCard> getByDoctorId(Integer medicalWorkerId) {
 		return medicalCardDao.getByDoctorId(medicalWorkerId);
+	}
+
+	@Override
+	public List<MedicalCardWithDepartment> getMedicalCardWithDepartment(Integer medicalWorkerId) {
+		return medicalCardDao.getMedicalCardWithDepartment(medicalWorkerId);
 	}
 
 }

@@ -12,13 +12,13 @@ public class ServicesTestDepartment {
 
 		IDepartmentService service = context.getBean(IDepartmentService.class);
 
-		System.out.println(service.getById(1));
+		System.out.println(service.getById(4));
 		System.out.println(service.getAll());
 
 		Department department = new Department(); // new object type Department
 		service.getById(department.getId()); // empty object
 
-		service.getById(2);
+		service.getById(5);
 		System.out.println(service.getById(2));
 		//department.setId(2);
 		//department.setName("department 5");

@@ -16,7 +16,9 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import com.lebedeva.valentina.hospital.dao.api.IMedicalCardDao;
+import com.lebedeva.valentina.hospital.dao.db.mapper.MedicalCardWithDepartmentMapper;
 import com.lebedeva.valentina.hospital.datamodel.MedicalCard;
+import com.lebedeva.valentina.hospital.datamodel.MedicalCardWithDepartment;
 
 @Repository
 public class MedicalCardDaoImpl implements IMedicalCardDao {
@@ -37,7 +39,7 @@ public class MedicalCardDaoImpl implements IMedicalCardDao {
 	@Override
 	public List<MedicalCard> getNotDischarge() {
 		List<MedicalCard> rs = jdbcTemplate.query("select * from medical_card where discharge_date = NULL ORDER BY id",
-				 new BeanPropertyRowMapper<MedicalCard>(MedicalCard.class));
+				new BeanPropertyRowMapper<MedicalCard>(MedicalCard.class));
 		return rs;
 	}
 
@@ -100,6 +102,17 @@ public class MedicalCardDaoImpl implements IMedicalCardDao {
 			}
 		});
 
+	}
+
+	@Override
+	public List<MedicalCardWithDepartment> getMedicalCardWithDepartment(Integer id) {
+		List<MedicalCardWithDepartment> rs = jdbcTemplate.query(
+				"select medical_card.id, medical_card.patient_full_name, medical_card.birthday, diagnosis.name as name_diagnosis, department.name as name_department, medical_card.enter_date from medical_card"
+						+ " left join department on  medical_card.department_id=department.id"
+						+ " left join diagnosis on  medical_card.diagnosis_id=diagnosis.id"
+						+ " where medical_card.doctor_id = ? and medical_card.discharge_date IS NULL;",
+				new Object[] { id }, new MedicalCardWithDepartmentMapper());
+		return rs;
 	}
 
 }

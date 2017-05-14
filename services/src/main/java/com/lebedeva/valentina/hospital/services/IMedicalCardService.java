@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.lebedeva.valentina.hospital.datamodel.MedicalCard;
+import com.lebedeva.valentina.hospital.datamodel.MedicalCardWithDepartment;
 
 public interface IMedicalCardService {
 
@@ -16,5 +17,7 @@ public interface IMedicalCardService {
 
 	@Transactional
 	void save(MedicalCard medicalCard);
+	
+	List<MedicalCardWithDepartment> getMedicalCardWithDepartment(Integer medicalWorkerId);
 
 }

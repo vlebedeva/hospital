@@ -19,9 +19,11 @@ public class ServicesTestMedicalCard {
 														// MedicalCard
 		service.getById(medicalCard.getId()); // empty object
 
-		System.out.println(service.getByDoctorId(3));
+		
+		
+		System.out.println(service.getMedicalCardWithDepartment(3));
 
-		java.util.Date date = new java.util.Date();
+		/*java.util.Date date = new java.util.Date();
 		java.sql.Date stDate = new java.sql.Date(date.getTime());
 
 		medicalCard.setId(3);
@@ -35,7 +37,7 @@ public class ServicesTestMedicalCard {
 
 		service.save(medicalCard);
 
-		System.out.println(service.getById(medicalCard.getId()));
+		System.out.println(service.getById(medicalCard.getId()));*/
 
 	}
 
