@@ -80,7 +80,7 @@ public class ScheduleDaoImpl implements IScheduleDao {
 				ps.setInt(1, schedule.getMedicalWorkerId());
 				ps.setDate(2, schedule.getStartDate());
 				ps.setTime(3, schedule.getStartTime());
-				ps.setDate(4, schedule.getStopDate());
+				ps.setDate(4, schedule.getEndDate());
 				ps.setTime(5, schedule.getStartTime());
 				return ps;
 			}
@@ -103,7 +103,7 @@ public class ScheduleDaoImpl implements IScheduleDao {
 				ps.setInt(1, schedule.getMedicalWorkerId());
 				ps.setDate(2, schedule.getStartDate());
 				ps.setTime(3, schedule.getStartTime());
-				ps.setDate(4, schedule.getStopDate());
+				ps.setDate(4, schedule.getEndDate());
 				ps.setTime(5, schedule.getStartTime());
 				ps.setInt(6, schedule.getId());
 				return ps;

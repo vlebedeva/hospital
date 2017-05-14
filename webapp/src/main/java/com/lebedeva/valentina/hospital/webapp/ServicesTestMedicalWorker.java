@@ -21,17 +21,17 @@ public class ServicesTestMedicalWorker {
 		service.getById(medicalWorker.getId()); // empty object
 
 		// medicalWorker.setId(2);
-		medicalWorker.setFullName("doctor from java");
+		/*medicalWorker.setFullName("doctor from java");
 		medicalWorker.setDepartmentId(2);
 		medicalWorker.setCategory(Category.first);
 		medicalWorker.setPosition(Position.DOCTOR);
 		medicalWorker.setSpecialization("spec 1");
-		medicalWorker.setLogin("asdfghjklkjgfds");
+		medicalWorker.setLogin("asd");
 		medicalWorker.setActive(true);
 
 		service.save(medicalWorker);
 
-		System.out.println(service.getById(medicalWorker.getId()));
+		System.out.println(service.getById(medicalWorker.getId()));*/
 
 		System.out.println(service.getByActive(true));
 

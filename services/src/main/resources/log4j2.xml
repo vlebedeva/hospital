@@ -4,7 +4,7 @@
 		<Property name="basePath">logs//</Property>
 		<property name="receipients">victorlebedzeu@gmail.com</property>
 		<property name="from">victorlebedzeu@gmail.com</property>
-		<property name="smtpHost">smtp.gmail.com</property>
+		<property name="sys:smtpHost">smtp.gmail.com</property>
 		<property name="smtpPort">587</property>
 		<property name="smtpProtocol">smtp</property>
 	</Properties>
@@ -26,7 +26,7 @@
 			  subject="Mail from log4j" 
 			  to="${receipients}"
 			  from="${from}" 
-			  smtpHost="${smtpHost}" 
+			  smtpHost="${sys:smtpHost}" 
 			  smtpPort="${smtpPort}"
 			  smtpProtocol="${smtpProtocol}" 
 			  smtpDebug="info" bufferSize="512">

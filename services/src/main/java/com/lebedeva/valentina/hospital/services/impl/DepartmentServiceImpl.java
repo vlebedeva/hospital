@@ -33,11 +33,10 @@ public class DepartmentServiceImpl implements IDepartmentService {
 	@Override
 	public void save(Department department) {
 		if (department.getId() == null) {
-			System.out.println("Insert new Department");
+			LOGGER.info("Insert new Department");
 			departmentDao.insert(department);
 		} else {
-
-			System.out.println("Update Department");
+			LOGGER.info("Update Department");
 			departmentDao.update(department);
 		}
 	}

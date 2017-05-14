@@ -9,8 +9,8 @@ public class Schedule {
 	private Integer medicalWorkerId;
 	private Date startDate;
 	private Time startTime;
-	private Date stopDate;
-	private Time stopTime;
+	private Date endDate;
+	private Time endTime;
 
 	public Integer getId() {
 		return id;
@@ -44,27 +44,27 @@ public class Schedule {
 		this.startTime = startTime;
 	}
 
-	public Date getStopDate() {
-		return stopDate;
+	public Date getEndDate() {
+		return endDate;
 	}
 
-	public void setStopDate(Date stopDate) {
-		this.stopDate = stopDate;
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
 	}
 
-	public Time getStopTime() {
-		return stopTime;
+	public Time getEndTime() {
+		return endTime;
 	}
 
-	public void setStopTime(Time stopTime) {
-		this.stopTime = stopTime;
+	public void setEndTime(Time endTime) {
+		this.endTime = endTime;
 	}
 
 	@Override
 	public String toString() {
 		return String.format(
-				"Schedule [id = %s medicalWorkerId = %s startDate = %s startTime = %s stopDate = %s stopTime = %s]", id,
-				medicalWorkerId, startDate, startTime, stopDate, stopTime);
+				"Schedule [id = %s medicalWorkerId = %s startDate = %s startTime = %s endDate = %s endTime = %s]", id,
+				medicalWorkerId, startDate, startTime, endDate, endTime);
 	}
 
 }
