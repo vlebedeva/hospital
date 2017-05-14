@@ -31,11 +31,10 @@ public class AuthorizationServicesImpl implements IAuthorizationService {
 	@Override
 	public void save(Authorization authorization) {
 		if (authorization.getId() == null) {
-			System.out.println("Insert new Authorization");
+			LOGGER.info("Insert new Authorization");
 			authorizationDao.insert(authorization);
 		} else {
-
-			System.out.println("Update Authorization");
+			LOGGER.info("Update Authorization");
 			authorizationDao.update(authorization);
 		}
 

@@ -33,10 +33,10 @@ public class AssignedProcedureServiceImpl implements IAssignedProcedureService {
 	@Override
 	public void save(AssignedProcedure assignedProcedure) {
 		if (assignedProcedure.getId() == null) {
-			System.out.println("Insert new AssignedProcedure");
+			LOGGER.info("Insert new AssignedProcedure");
 			assignedProcedureDao.insert(assignedProcedure);
 		} else {
-			System.out.println("Update AssignedProcedure");
+			LOGGER.info("Update AssignedProcedure");
 			assignedProcedureDao.update(assignedProcedure);
 		}
 	}

@@ -38,11 +38,10 @@ public class ScheduleServiceImpl implements IScheduleService {
 	@Override
 	public void save(Schedule schedule) {
 		if (schedule.getId() == null) {
-			System.out.println("Insert new Schedule");
+			LOGGER.info("Insert new Schedule");
 			scheduleDao.insert(schedule);
 		} else {
-
-			System.out.println("Update Schedule");
+			LOGGER.info("Update Schedule");
 			scheduleDao.update(schedule);
 		}
 	}

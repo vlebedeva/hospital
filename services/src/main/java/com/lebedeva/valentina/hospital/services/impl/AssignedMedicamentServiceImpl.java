@@ -32,11 +32,10 @@ public class AssignedMedicamentServiceImpl implements IAssignedMedicamentService
 	@Override
 	public void save(AssignedMedicament assignedMedicament) {
 		if (assignedMedicament.getId() == null) {
-			System.out.println("Insert new AssignedMedicament");
+			LOGGER.info("Insert new AssignedMedicament");
 			assignedMedicamentDao.insert(assignedMedicament);
 		} else {
-
-			System.out.println("Update AssignedMedicament");
+			LOGGER.info("Update AssignedMedicament");
 			assignedMedicamentDao.update(assignedMedicament);
 		}
 

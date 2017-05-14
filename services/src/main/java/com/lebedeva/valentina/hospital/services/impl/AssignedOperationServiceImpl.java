@@ -33,10 +33,10 @@ public class AssignedOperationServiceImpl implements IAssignedOperationService {
 	@Override
 	public void save(AssignedOperation assignedOperation) {
 		if (assignedOperation.getId() == null) {
-			System.out.println("Insert new AssignedOperation");
+			LOGGER.info("Insert new AssignedOperation");
 			assignedOperationDao.insert(assignedOperation);
 		} else {
-			System.out.println("Update AssignedOperation");
+			LOGGER.info("Update AssignedOperation");
 			assignedOperationDao.update(assignedOperation);
 		}
 	}

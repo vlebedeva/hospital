@@ -37,7 +37,7 @@ public class ProcedureServiceImpl implements IProcedureService {
 	@Override
 	public void save(Procedure procedure) {
 		if (procedure.getId() == null) {
-			System.out.println("Insert new Procedure");
+			LOGGER.info("Insert new Procedure");
 			procedureDao.insert(procedure);
 		}
 

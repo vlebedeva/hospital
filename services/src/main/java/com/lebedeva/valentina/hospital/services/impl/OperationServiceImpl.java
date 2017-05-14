@@ -38,7 +38,7 @@ public class OperationServiceImpl implements IOperationService {
 	@Override
 	public void save(Operation operation) {
 		if (operation.getId() == null) {
-			System.out.println("Insert new Operation");
+			LOGGER.info("Insert new Operation");
 			operationDao.insert(operation);
 		}
 	}

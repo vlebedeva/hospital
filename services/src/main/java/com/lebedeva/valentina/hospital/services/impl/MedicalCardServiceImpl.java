@@ -31,15 +31,11 @@ public class MedicalCardServiceImpl implements IMedicalCardService {
 			System.out.println("Insert new MedicalCard");
 			medicalCardDao.insert(medicalCard);
 			LOGGER.info("New Medical Card with id = {} added successfully", medicalCard.getId());
-			LOGGER.info("New Medical Card added");
 		} else {
-
 			System.out.println("Update MedicalCard");
 			medicalCardDao.update(medicalCard);
 			LOGGER.info("Medical Card updated");
 		}
-		
-
 	}
 
 	@Override

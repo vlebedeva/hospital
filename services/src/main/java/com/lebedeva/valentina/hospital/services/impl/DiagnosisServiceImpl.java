@@ -32,7 +32,7 @@ public class DiagnosisServiceImpl implements IDiagnosisService {
 	@Override
 	public void save(Diagnosis diagnosis) {
 		if (diagnosis.getId() == null) {
-			System.out.println("Insert new Diagnosis");
+			LOGGER.info("Insert new Diagnosis");
 			diagnosisDao.insert(diagnosis);
 		}
 	}

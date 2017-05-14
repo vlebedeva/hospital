@@ -37,7 +37,7 @@ public class MedicamentServiceImpl implements IMedicamentService {
 	@Override
 	public void save(Medicament medicament) {
 		if (medicament.getId() == null) {
-			System.out.println("Insert new Medicament");
+			LOGGER.info("Insert new Medicament");
 			medicamentDao.insert(medicament);
 		}
 	}
