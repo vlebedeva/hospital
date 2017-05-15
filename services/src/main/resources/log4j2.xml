@@ -2,11 +2,11 @@
 <Configuration>
 	  <Properties>
 		<Property name="basePath">logs//</Property>
-		<property name="receipients">victorlebedzeu@gmail.com</property>
+		<property name="receipients">val.dan@tut.by</property>
 		<property name="from">victorlebedzeu@gmail.com</property>
-		<property name="sys:smtpHost">smtp.gmail.com</property>
-		<property name="smtpPort">587</property>
-		<property name="smtpProtocol">smtp</property>
+		<property name="smtpHost">smtp.gmail.com</property>
+		<property name="smtpPort">465</property>
+		<property name="smtpProtocol">smtps</property>
 	</Properties>
 	<Appenders>
 		<Console name="Console" target="SYSTEM_OUT">
@@ -26,7 +26,7 @@
 			  subject="Mail from log4j" 
 			  to="${receipients}"
 			  from="${from}" 
-			  smtpHost="${sys:smtpHost}" 
+			  smtpHost="${smtpHost}" 
 			  smtpPort="${smtpPort}"
 			  smtpProtocol="${smtpProtocol}" 
 			  smtpDebug="info" bufferSize="512">
