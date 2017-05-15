@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration>
-	  <Properties>
+	<Properties>
 		<Property name="basePath">logs//</Property>
 		<property name="receipients">val.dan@tut.by</property>
 		<property name="from">victorlebedzeu@gmail.com</property>
 		<property name="smtpHost">smtp.gmail.com</property>
 		<property name="smtpPort">465</property>
-		<property name="smtpProtocol">smtps</property>
+		<property name="smtpProtocol">smtp</property>
+		<property name="smtpUser">Victor Lebedzeu</property>
+		<property name="smtpPassword">80295881391</property>
 	</Properties>
 	<Appenders>
 		<Console name="Console" target="SYSTEM_OUT">
@@ -22,17 +24,14 @@
 			</Policies>
 		</RollingFile>
 
-		 <SMTP name="Mailer"
-			  subject="Mail from log4j" 
-			  to="${receipients}"
-			  from="${from}" 
-			  smtpHost="${smtpHost}" 
-			  smtpPort="${smtpPort}"
-			  smtpProtocol="${smtpProtocol}" 
-			  smtpDebug="info" bufferSize="512">
-			  <PatternLayout>
-				<pattern charset="CP1251">[%5p] %d{yyyy-MM-dd HH:mm:ss} %c{1}:%L - %m%n </pattern>
-			  </PatternLayout>
+		<SMTP name="Mailer" subject="Mail from log4j" to="${receipients}"
+			from="${from}" smtpHost="${smtpHost}" smtpPort="${smtpPort}"
+			smtpProtocol="${smtpProtocol}" smtpUsername="${smtpUser}" 
+              smtpPassword="${smtpPassword}" smtpDebug="info" bufferSize="512">
+			<PatternLayout>
+				<pattern charset="CP1251">[%5p] %d{yyyy-MM-dd HH:mm:ss} %c{1}:%L -
+					%m%n </pattern>
+			</PatternLayout>
 		</SMTP>
 	</Appenders>
 
@@ -45,7 +44,7 @@
 			additivity="false">
 			<AppenderRef ref="Console" />
 			<AppenderRef ref="RollingFile" />
-			<AppenderRef ref="Mailer"  /> 
+			<AppenderRef ref="Mailer" />
 		</Logger>
 
 	</Loggers>
