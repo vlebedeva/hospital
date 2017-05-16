@@ -72,7 +72,7 @@ public class DepartmentServiceTest extends AbstractTest {
 
 	// UPDATE
 	@Test
-	public void updateAllDepartmentTest() {
+	public void updateDepartmentTest() {
 		LOGGER.info("---------Update Department Test---------");
 		name = "Test Name";
 		department.setName(name);
